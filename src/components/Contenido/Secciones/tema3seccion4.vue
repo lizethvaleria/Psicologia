@@ -32,19 +32,19 @@
                     <label>
                        	¿Qué te dice la imagen?
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[1].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[1].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                        	¿Qué te imaginas que siente la niña?
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[3].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[3].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                      	¿Qué te imaginas que siente el padre?? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[5].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[5].respuesta" rows="3"></textarea>
             </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-6 text-center">
@@ -56,11 +56,65 @@
 </div>
 </template>
 
-
 <script>
 export default {
-    name:'tema3seccion4'
+    name:'tema3seccion4',
+    updated(){
+        this.Validar();
+    },
+    methods:{
+        Crear_PDF(){
+            var pdf = new jsPDF('landscape');
+            var columns = ["Planning Personal de índole vertical"];
+            var data = [
+                [
+                    '¿Qué es lo que más me agrada de mí?'
+                ],
+                [
+                    this.curso.temas[2].secciones[3].preguntas[1].respuesta
+                ],
+                [
+                    '¿Qué es lo que más me molesta de mí?'
+                ],
+                [
+                    this.curso.temas[2].secciones[3].preguntas[3].respuesta
+                ],
+                [
+                    '¿Cómo considero que me ven los demás usualmente?'
+                ],
+                [
+                    this.curso.temas[2].secciones[3].preguntas[5].respuesta
+                ],
+            ];
+
+            pdf.autoTable(columns,data,
+                { margin:{ top: 25 }}
+            );
+
+            pdf.save("planning_personal.pdf");
+        },
+        Validar(){
+            if(this.curso.temas[2].secciones[3].preguntas[1].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[3].preguntas[3].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[3].preguntas[5].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else{
+                this.curso.continuar=true;
+            }
+        }
+    },
+    computed:{
+        curso(){
+          return this.$store.getters.getCurso;
+        }
+    },
+    mounted(){
+        this.Validar();
+    }
 };
 </script>
-<style>
-</style>
