@@ -26,20 +26,12 @@ export default {
             active:false,
             completado:false,
             secciones:[
-              {numero:1,active:false,completado:false},
-              {numero:2,active:false,completado:false},
-              {numero:3,active:false,completado:false},
-              {numero:4,active:false,completado:false},
-              {numero:5,active:false,completado:false},
-              {numero:6,active:false,completado:false},
-              {
-                numero:7,
+              { 
+                numero:1,
                 active:false,
                 completado:false,
-                preguntas:[
-                  {respuesta:''},
-                  {respuesta:''},
-                  {respuesta:''}
+                preguntas: [
+                  {respuesta: ''}
                 ]
               },
             ]
