@@ -68,19 +68,19 @@
                     <label>
                      En mi infancia fui un niño/a: 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[11].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[13].respuesta" rows="3"></textarea>
                 </div>
                  <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                     ¿Cómo me veo respecto a mi presente? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[11].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[15].respuesta" rows="3"></textarea>
                 </div>
                  <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                     ¿Cómo me veo respecto a mi futuro?
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[11].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[17].respuesta" rows="3"></textarea>
                 </div>
                  <div class="col-12 text-center">
                    Conocerse a sí mismo implica tiempo y está presente a lo largo de la vida. No corras, es un aprendizaje de vida permanente y continua.
@@ -141,20 +141,20 @@ export default {
                 ],
                 [
                     this.curso.temas[2].secciones[0].preguntas[11].respuesta
-                ]
-                 [
+                ],
+                [
                     'En mi infancia fui un niño/a: '
                 ],
                 [
                     this.curso.temas[2].secciones[0].preguntas[13].respuesta
-                ]
-                 [
+                ],
+                [
                     '¿Cómo me veo respecto a mi presente? '
                 ],
                 [
                     this.curso.temas[2].secciones[0].preguntas[15].respuesta
-                ]
-                 [
+                ],
+                [
                     '¿Cómo me veo respecto a mi futuro?'
                 ],
                 [

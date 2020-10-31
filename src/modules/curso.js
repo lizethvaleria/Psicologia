@@ -47,7 +47,7 @@ export default {
           },
           {
             numero:3,
-            nombre:'Ejecutar',
+            nombre:'El sendero de mis emociones',
             active:false,
             completado:false,
             secciones:[
@@ -73,7 +73,7 @@ export default {
                   {respuesta:''},
                   {respuesta:''},
                   {respuesta:''},
-
+                  {respuesta:''},
                 ]
               }
             ]
