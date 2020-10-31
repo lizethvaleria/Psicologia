@@ -176,9 +176,6 @@ export default {
                 ]
             ];
 
-            console.log(data);
-            console.log("In curso: ", this.curso.temas[2].secciones[1]);
-
             pdf.autoTable(columns,data,
                 { margin:{ top: 25 }}
             );

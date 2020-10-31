@@ -103,6 +103,23 @@ export default {
                   {respuesta:''},
                   {respuesta:''},
                 ]
+              },
+              {
+                numero:3,
+                active:false,
+                completado:false,
+                preguntas:[
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                ]
               }
             ]
           },

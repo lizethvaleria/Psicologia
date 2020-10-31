@@ -29,31 +29,31 @@
                     <label>
                         <b>Mis raíces</b> 	¿Qué me sostiene en esta vida? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[1].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[2].preguntas[1].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                        <b>Tronco</b> ¿Qué meta me puedo proponer? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[3].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[2].preguntas[3].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                       <b>Ramas</b>¿Por qué deseo esa meta? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[5].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[2].preguntas[5].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                        <b>Hojas</b>¿Qué debo hacer para lograr esa meta? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[7].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[2].preguntas[7].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                      <b>Frutos</b>¿Qué espero lograr con esa meta? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[0].preguntas[9].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[2].preguntas[9].respuesta" rows="3"></textarea>
                 </div>
             </div>
             <div class="row mt-5 justify-content-center">
@@ -65,11 +65,83 @@
     </div>
 </template>
 
-
 <script>
 export default {
-    name:'tema3seccion3'
+    name:'tema3seccion3',
+    updated(){
+        this.Validar();
+    },
+    methods:{
+        Crear_PDF(){
+            var pdf = new jsPDF('landscape');
+            var columns = ["Planning Personal de índole vertical"];
+            var data = [
+                [
+                    '¿Qué es lo que más me agrada de mí?'
+                ],
+                [
+                    this.curso.temas[2].secciones[2].preguntas[1].respuesta
+                ],
+                [
+                    '¿Qué es lo que más me molesta de mí?'
+                ],
+                [
+                    this.curso.temas[2].secciones[2].preguntas[3].respuesta
+                ],
+                [
+                    '¿Cómo considero que me ven los demás usualmente?'
+                ],
+                [
+                    this.curso.temas[2].secciones[2].preguntas[5].respuesta
+                ],
+                [
+                    '¿Cuáles son mis principales talentos?'
+                ],
+                [
+                    this.curso.temas[2].secciones[2].preguntas[7].respuesta
+                ],
+                [
+                    '¿Cómo es mi relación con mi familia en general?'
+                ],
+                [
+                    this.curso.temas[2].secciones[2].preguntas[9].respuesta
+                ],
+            ];
+
+            pdf.autoTable(columns,data,
+                { margin:{ top: 25 }}
+            );
+
+            pdf.save("planning_personal.pdf");
+        },
+        Validar(){
+            if(this.curso.temas[2].secciones[2].preguntas[1].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[2].preguntas[3].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[2].preguntas[5].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[2].preguntas[7].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else if(this.curso.temas[2].secciones[2].preguntas[9].respuesta.length==0){
+                this.curso.continuar=false;
+            }
+            else{
+                this.curso.continuar=true;
+            }
+        }
+    },
+    computed:{
+        curso(){
+          return this.$store.getters.getCurso;
+        }
+    },
+    mounted(){
+        this.Validar();
+    }
 };
 </script>
-<style>
-</style>
