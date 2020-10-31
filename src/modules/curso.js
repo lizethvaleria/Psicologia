@@ -8,7 +8,7 @@ export default {
           idusuario:null,
           nomusuario:'',
           estudiante_uanl:null,
-          facultad:'Agronomía',
+          preparatoria:'',
           trabajo:null,
           nomtrabajo:'',
           email:'',
