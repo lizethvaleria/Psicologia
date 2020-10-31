@@ -139,16 +139,6 @@ export default {
           },
           {
             numero:4,
-            nombre:'Consejos Genéricos',
-            active:false,
-            completado:false,
-            secciones:[
-              {numero:1,active:false,completado:false},
-              {numero:2,active:false,completado:false}
-            ]
-          },
-          {
-            numero:5,
             nombre:'Curso Terminado',
             active:false,
             completado:false,
