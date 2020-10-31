@@ -106,7 +106,7 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-    name:'tema2seccion2',
+    name:'tema3seccion2',
     methods:{
         Calcular_Resultado(){
             var total=0;

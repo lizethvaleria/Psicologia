@@ -28,17 +28,12 @@
 
                     <div class="card">
                         <tema1seccion1 v-if="seccion_actual.componente=='1_1'"></tema1seccion1>
-                        <tema1seccion2 v-if="seccion_actual.componente=='1_2'"></tema1seccion2>
-                        <tema1seccion3 v-if="seccion_actual.componente=='1_3'"></tema1seccion3>
-                        <tema1seccion4 v-if="seccion_actual.componente=='1_4'"></tema1seccion4>
-                        <tema1seccion5 v-if="seccion_actual.componente=='1_5'"></tema1seccion5>
-                        <tema1seccion6 v-if="seccion_actual.componente=='1_6'"></tema1seccion6>
-                        <tema1seccion7 v-if="seccion_actual.componente=='1_7'"></tema1seccion7>
                         <tema2seccion1 v-if="seccion_actual.componente=='2_1'"></tema2seccion1>
-                        <tema2seccion2 v-if="seccion_actual.componente=='2_2'"></tema2seccion2>
                         <tema3seccion1 v-if="seccion_actual.componente=='3_1'"></tema3seccion1>
-                        <tema4seccion1 v-if="seccion_actual.componente=='4_1'"></tema4seccion1>
-                        <tema4seccion2 v-if="seccion_actual.componente=='4_2'"></tema4seccion2>
+                        <tema3seccion2 v-if="seccion_actual.componente=='3_2'"></tema3seccion2>
+                        <tema3seccion3 v-if="seccion_actual.componente=='3_3'"></tema3seccion3>
+                        <tema3seccion4 v-if="seccion_actual.componente=='3_4'"></tema3seccion4>
+                        <tema3seccion5 v-if="seccion_actual.componente=='3_5'"></tema3seccion5>
                         <tema5seccion1 @CambiarActivo="Colocar_Seccion_Actual_Al_Cargar_La_Pagina" v-if="seccion_actual.componente=='5_1'"></tema5seccion1>
                         <div class="card-footer">
                             <a href="" v-on:click.prevent="Regresar" class="btn btn-primary" 
@@ -77,34 +72,24 @@
 <script>
 import { mapActions } from 'vuex';
 import Tema1Seccion1 from './Secciones/tema1seccion1.vue';
-import Tema1Seccion2 from './Secciones/tema1seccion2.vue';
-import Tema1Seccion3 from './Secciones/tema1seccion3.vue';
-import Tema1Seccion4 from './Secciones/tema1seccion4.vue';
-import Tema1Seccion5 from './Secciones/tema1seccion5.vue';
-import Tema1Seccion6 from './Secciones/tema1seccion6.vue';
-import Tema1Seccion7 from './Secciones/tema1seccion7.vue';
 import Tema2Seccion1 from './Secciones/tema2seccion1.vue';
-import Tema2Seccion2 from './Secciones/tema2seccion2.vue';
 import Tema3Seccion1 from './Secciones/tema3seccion1.vue';
-import Tema4Seccion1 from './Secciones/tema4seccion1.vue';
-import Tema4Seccion2 from './Secciones/tema4seccion2.vue';
+import Tema3Seccion2 from './Secciones/tema3seccion2.vue';
+import Tema3Seccion3 from './Secciones/tema3seccion3.vue';
+import Tema3Seccion4 from './Secciones/tema3seccion4.vue';
+import Tema3Seccion5 from './Secciones/tema3seccion5.vue';
 import Tema5Seccion1 from './Secciones/tema5seccion1.vue';
 import ContadorView from './Contador.vue';
 import ListaTemasView from './Lista_Temas.vue';
 export default {
     components:{
         tema1seccion1:Tema1Seccion1,
-        tema1seccion2:Tema1Seccion2,
-        tema1seccion3:Tema1Seccion3,
-        tema1seccion4:Tema1Seccion4,
-        tema1seccion5:Tema1Seccion5,
-        tema1seccion6:Tema1Seccion6,
-        tema1seccion7:Tema1Seccion7,
         tema2seccion1:Tema2Seccion1,
-        tema2seccion2:Tema2Seccion2,
         tema3seccion1:Tema3Seccion1, 
-        tema4seccion1:Tema4Seccion1,
-        tema4seccion2:Tema4Seccion2,
+        tema3seccion2:Tema3Seccion2, 
+        tema3seccion3:Tema3Seccion3, 
+        tema3seccion4:Tema3Seccion4, 
+        tema3seccion5:Tema3Seccion5, 
         tema5seccion1:Tema5Seccion1,        
         contadorview:ContadorView,
         listatemasview:ListaTemasView

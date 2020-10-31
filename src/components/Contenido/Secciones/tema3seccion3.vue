@@ -68,7 +68,7 @@
 
 <script>
 export default {
-    name:'tema1seccion3'
+    name:'tema3seccion3'
 };
 </script>
 <style>

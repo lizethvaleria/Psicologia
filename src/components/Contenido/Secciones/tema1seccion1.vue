@@ -40,7 +40,7 @@
                     <label for="exampleFormControlTextarea1">
                         <b>¿Qué aprendizajes te deja el video “Mis grietas valen oro”? </b>
                     </label>
-                    <textarea v-model="curso.temas[0].secciones[6].preguntas[0].respuesta" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea v-model="curso.temas[0].secciones[0].preguntas[0].respuesta" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
         </div>

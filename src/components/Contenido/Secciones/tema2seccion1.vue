@@ -50,7 +50,7 @@
 
 <script>
 export default {
-    name:'tema1seccion2'
+    name:'tema2seccion1'
 };
 </script>
 <style>

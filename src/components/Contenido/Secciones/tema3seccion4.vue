@@ -53,12 +53,13 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 
 <script>
 export default {
-    name:'tema1seccion4'
+    name:'tema3seccion4'
 };
 </script>
 <style>

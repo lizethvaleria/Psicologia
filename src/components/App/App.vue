@@ -170,7 +170,7 @@ export default {
     return {
       time:60,
       timer:null,
-      continuar:false,
+      continuar: true,
     }
   },
   methods:{

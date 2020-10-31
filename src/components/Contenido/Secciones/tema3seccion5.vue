@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    name:'tema1seccion5'
+    name:'tema3seccion5'
 };
 </script>
 <style>
