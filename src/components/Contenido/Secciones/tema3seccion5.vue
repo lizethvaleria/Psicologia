@@ -29,25 +29,25 @@
                     <label>
                        	<b>Primera Ley</b> ¿Qué es lo que más me molesta de los demás, pero sé que también está en mí?
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[1].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[1].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                        	<b>Segunda Ley</b>¿Qué es lo más me critican y me duele, pero me cuesta cambiarlo/trabajarlo?
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[3].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[3].respuesta" rows="3"></textarea>
                 </div>
                 <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                      	<b>Tercera Ley</b>¿Qué es lo que me gusta de mí y sé que a los demás también? 
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[5].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[5].respuesta" rows="3"></textarea>
             </div>
              <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                       <b>Cuarta Ley</b>	¿Qué es lo más me critican y desean que cambie, pero sé que no soy así? Más bien está en los demás.
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[5].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[7].respuesta" rows="3"></textarea>
             </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-6 text-center">
@@ -74,25 +74,25 @@ export default {
                     '¿Qué es lo que más me molesta de los demás, pero sé que también está en mí?'
                 ],
                 [
-                    this.curso.temas[2].secciones[3].preguntas[1].respuesta
+                    this.curso.temas[2].secciones[4].preguntas[1].respuesta
                 ],
                 [
                     '¿Qué es lo más me critican y me duele, pero me cuesta cambiarlo/trabajarlo?'
                 ],
                 [
-                    this.curso.temas[2].secciones[3].preguntas[3].respuesta
+                    this.curso.temas[2].secciones[4].preguntas[3].respuesta
                 ],
                 [
                     '¿Qué es lo que me gusta de mí y sé que a los demás también? '
                 ],
                 [
-                    this.curso.temas[2].secciones[3].preguntas[5].respuesta
+                    this.curso.temas[2].secciones[4].preguntas[5].respuesta
                 ],
                 [
                     '¿Qué es lo más me critican y desean que cambie, pero sé que no soy así? Más bien está en los demás.'
                 ],
                 [
-                    this.curso.temas[2].secciones[3].preguntas[1].respuesta
+                    this.curso.temas[2].secciones[4].preguntas[7].respuesta
                 ],
             ];
 
@@ -103,13 +103,13 @@ export default {
             pdf.save("planning_personal.pdf");
         },
         Validar(){
-            if(this.curso.temas[2].secciones[3].preguntas[1].respuesta.length==0){
+            if(this.curso.temas[2].secciones[4].preguntas[1].respuesta.length==0){
                 this.curso.continuar=false;
             }
-            else if(this.curso.temas[2].secciones[3].preguntas[3].respuesta.length==0){
+            else if(this.curso.temas[2].secciones[4].preguntas[3].respuesta.length==0){
                 this.curso.continuar=false;
             }
-            else if(this.curso.temas[2].secciones[3].preguntas[5].respuesta.length==0){
+            else if(this.curso.temas[2].secciones[4].preguntas[5].respuesta.length==0){
                 this.curso.continuar=false;
             }
             else{

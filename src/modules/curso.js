@@ -122,10 +122,25 @@ export default {
                 ]
               },
               {
-                numero:3,
+                numero:4,
                 active:false,
                 completado:false,
                 preguntas:[
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                  {respuesta:''},
+                ]
+              },
+              {
+                numero:5,
+                active:false,
+                completado:false,
+                preguntas:[
+                  {respuesta:''},
                   {respuesta:''},
                   {respuesta:''},
                   {respuesta:''},
