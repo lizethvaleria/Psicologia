@@ -77,31 +77,31 @@ export default {
             var columns = ["Planning Personal de índole vertical"];
             var data = [
                 [
-                    '¿Qué es lo que más me agrada de mí?'
+                    'Mis raíces/¿Qué me sostiene en esta vida? '
                 ],
                 [
                     this.curso.temas[2].secciones[2].preguntas[1].respuesta
                 ],
                 [
-                    '¿Qué es lo que más me molesta de mí?'
+                    'Tronco/¿Qué meta me puedo proponer? '
                 ],
                 [
                     this.curso.temas[2].secciones[2].preguntas[3].respuesta
                 ],
                 [
-                    '¿Cómo considero que me ven los demás usualmente?'
+                    'Ramas/¿Por qué deseo esa meta? '
                 ],
                 [
                     this.curso.temas[2].secciones[2].preguntas[5].respuesta
                 ],
                 [
-                    '¿Cuáles son mis principales talentos?'
+                    'Hojas/¿Qué debo hacer para lograr esa meta? '
                 ],
                 [
                     this.curso.temas[2].secciones[2].preguntas[7].respuesta
                 ],
                 [
-                    '¿Cómo es mi relación con mi familia en general?'
+                    'Frutos/¿Qué espero lograr con esa meta? '
                 ],
                 [
                     this.curso.temas[2].secciones[2].preguntas[9].respuesta

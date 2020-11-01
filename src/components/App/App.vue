@@ -10,7 +10,7 @@
       "
     >
       <div class="col-12 text-center" v-if="!curso.video_rector">
-        <h3>Cápsula Saber Ser</h3>
+        <h3>Mensaje del Rector.</h3>
       </div>
       <div class="col-11 col-lg-6 text-center mb-5" v-if="!curso.video_rector">
         <div class="row ">
@@ -28,9 +28,9 @@
         class="col-12 mt-3 text-center"
         v-if="curso.video_rector && !curso.reglas_aceptadas"
       >
-        <h3>Sinopsis con notas aclaratorias</h3>
+        <h3>Mensaje del Rector</h3>
       </div>
-      <div class="col-12">
+      <div class="col-12 text-center">
         <p>
           Es un gusto saludarte en esta ocasión por este medio y a su vez deseo
           reconocer tu gran esfuerzo y dedicación por llevar a cabo muy
@@ -68,31 +68,12 @@
           cualquier obstáculo, porque empezarás a creer aún más en ti y
           desarrollarás aún más tu capacidad de resiliencia.
         </p>
-        <p>
+        <strong><h4>
           No te detengas, transfórmate y trasciende. Ing. Rogelio G. Garza
           Rivera. Rector
-        </p>
+        </h4></strong>
       </div>
-      <div
-        class="col-12 col-lg-8 mt-3"
-        v-if="curso.video_rector && !curso.reglas_aceptadas"
-      >
-        <ul>
-          <li>
-            El presente seminario es de orden genérico y está dirigido
-            principalmente a la comunidad que no cuenta con conocimientos
-            especializados en el tema. Además,
-            <b>no sustituye o representa un tratamiento psicoterapéutico</b>.
-          </li>
-          <li class="mt-3">
-            Resulta importante mencionar que se solicitaran ciertos datos
-            generales sobre usted, para la elaboración de una
-            <b>constancia</b> avalada por la <b>FAPSI y FIME</b>. Aclarando que
-            en relación a las actividades propias del semanario serán manejadas
-            con confidencialidad y anonimato.
-          </li>
-        </ul>
-      </div>
+   
       <div
         class="col-12 mt-5 mb-5 text-center"
         v-if="curso.video_rector && !curso.reglas_aceptadas"

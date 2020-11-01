@@ -115,61 +115,61 @@ export default {
             var columns = ["Planning Personal de índole vertical"];
             var data = [
                 [
-                    '¿Qué es lo que más me agrada de mí?'
+                    '  Piensa en una situación en la que estuviste feliz. '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[1].respuesta
                 ],
                 [
-                    '¿Qué es lo que más me molesta de mí?'
+                    '¿Qué pensamientos pasaron por tu mente en ese momento? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[3].respuesta
                 ],
                 [
-                    '¿Cómo considero que me ven los demás usualmente?'
+                    '¿Qué emociones tuviste? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[5].respuesta
                 ],
                 [
-                    '¿Cuáles son mis principales talentos?'
+                    '¿Cómo te comportaste/actuaste en esta situación? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[7].respuesta
                 ],
                 [
-                    '¿Cómo es mi relación con mi familia en general?'
+                    '¿Qué consecuencias tuviste por tu actuar? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[9].respuesta
                 ],
                 [
-                    '¿Cómo me relaciono con mis amistades en general?'
+                    'Piensa en una situación en la que te enojaste.'
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[11].respuesta
                 ],
                 [
-                    'En mi infancia fui un niño/a: '
+                    '¿Qué pensamientos pasaron por tu mente en ese momento? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[13].respuesta
                 ],
                 [
-                    '¿Cómo me veo respecto a mi presente? '
+                    '¿Qué emociones tuviste? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[15].respuesta
                 ],
                 [
-                    '¿Cómo me veo respecto a mi futuro?'
+                    '¿Cómo te comportaste/actuaste en esa situación? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[17].respuesta
                 ],
                 [
-                    '¿Cómo me veo respecto a mi futuro?'
+                    '¿Qué consecuencias tuviste por tu actuar? '
                 ],
                 [
                     this.curso.temas[2].secciones[1].preguntas[19].respuesta

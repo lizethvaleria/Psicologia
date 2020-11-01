@@ -45,6 +45,7 @@
                      	¿Qué te imaginas que siente el padre?? 
                     </label>
                     <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[5].respuesta" rows="3"></textarea>
+                </div>
             </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-6 text-center">
@@ -53,7 +54,7 @@
             </div>
         </div>
     </div>
-</div>
+
 </template>
 
 <script>
@@ -68,19 +69,19 @@ export default {
             var columns = ["Planning Personal de índole vertical"];
             var data = [
                 [
-                    '¿Qué es lo que más me agrada de mí?'
+                    '¿Qué te dice la imagen?'
                 ],
                 [
                     this.curso.temas[2].secciones[3].preguntas[1].respuesta
                 ],
                 [
-                    '¿Qué es lo que más me molesta de mí?'
+                    '¿Qué te imaginas que siente la niña?'
                 ],
                 [
                     this.curso.temas[2].secciones[3].preguntas[3].respuesta
                 ],
                 [
-                    '¿Cómo considero que me ven los demás usualmente?'
+                    '¿Qué te imaginas que siente el padre?? '
                 ],
                 [
                     this.curso.temas[2].secciones[3].preguntas[5].respuesta
