@@ -247,6 +247,9 @@ export default {
       continuar: true
     };
   },
+  mounted() {
+    this.Video_Visto();
+  }, 
   methods: {
     Video_Visto() {
       this.curso.video_rector = true;
