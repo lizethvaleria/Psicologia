@@ -3,31 +3,9 @@
     <headerview></headerview>
     <div
       class="row mt-5 pt-5 justify-content-center"
-      v-if="
-        !curso.reglas_aceptadas ||
-          !curso.video_rector ||
-          !curso.informacion_llenada
-      "
+      v-if="!curso.reglas_aceptadas || !curso.informacion_llenada"
     >
-      <div class="col-12 text-center" v-if="!curso.video_rector">
-        <h3>Mensaje del Rector.</h3>
-      </div>
-      <div class="col-11 col-lg-6 text-center mb-5" v-if="!curso.video_rector">
-        <div class="row ">
-          <div class="col-12 text-center">
-            <a
-              href=""
-              v-on:click.prevent="Video_Visto"
-              class="btn btn-sm btn-success"
-              >Continuar</a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-12 mt-3 text-center"
-        v-if="curso.video_rector && !curso.reglas_aceptadas"
-      >
+      <div class="col-12 mt-3 text-center">
         <h3>Mensaje del Rector</h3>
       </div>
       <div class="col-12 text-center">
@@ -68,16 +46,15 @@
           cualquier obstáculo, porque empezarás a creer aún más en ti y
           desarrollarás aún más tu capacidad de resiliencia.
         </p>
-        <strong><h4>
-          No te detengas, transfórmate y trasciende. Ing. Rogelio G. Garza
-          Rivera. Rector
-        </h4></strong>
+        <strong
+          ><h4>
+            No te detengas, transfórmate y trasciende. Ing. Rogelio G. Garza
+            Rivera. Rector
+          </h4></strong
+        >
       </div>
-   
-      <div
-        class="col-12 mt-5 mb-5 text-center"
-        v-if="curso.video_rector && !curso.reglas_aceptadas"
-      >
+
+      <div class="col-12 mt-5 mb-5 text-center" v-if="!curso.reglas_aceptadas">
         <a href="" v-on:click.prevent="Comenzar" class="btn btn-success"
           >Comenzar</a
         >
@@ -249,10 +226,11 @@ export default {
   },
   mounted() {
     this.Video_Visto();
-  }, 
+  },
   methods: {
     Video_Visto() {
       this.curso.video_rector = true;
+      this.curso.reglas_aceptadas = true;
       this.Guardar_En_LocalStorage();
       //this.Guardar_En_Firebase();
     },
@@ -262,7 +240,7 @@ export default {
       //this.Guardar_En_Firebase();
     },
     Continuar() {
-      if (this.curso.usuario.estudiante_uanl == null) {
+      if (!this.curso.usuario.estudiante_uanl) {
         alert("Todos las preguntas son obligatorias");
       } else {
         $(".preloader").fadeIn();
