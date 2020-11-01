@@ -152,15 +152,6 @@ export default {
               }
             ]
           },
-          {
-            numero:4,
-            nombre:'Curso Terminado',
-            active:false,
-            completado:false,
-            secciones:[
-              {numero:1,active:false,completado:false}
-            ]
-          },
         ],
         tema_actual:1
       }

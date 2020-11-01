@@ -37,7 +37,7 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-    name:'tema5seccion1',
+    name:'tema4seccion1',
     data(){
         return {
             primer_apellido:'',

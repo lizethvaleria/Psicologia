@@ -34,20 +34,19 @@
                         <tema3seccion3 v-if="seccion_actual.componente=='3_3'"></tema3seccion3>
                         <tema3seccion4 v-if="seccion_actual.componente=='3_4'"></tema3seccion4>
                         <tema3seccion5 v-if="seccion_actual.componente=='3_5'"></tema3seccion5>
-                        <tema5seccion1 @CambiarActivo="Colocar_Seccion_Actual_Al_Cargar_La_Pagina" v-if="seccion_actual.componente=='5_1'"></tema5seccion1>
+                        <tema4seccion1 @CambiarActivo="Colocar_Seccion_Actual_Al_Cargar_La_Pagina" v-if="seccion_actual.componente=='4_1'"></tema4seccion1>
                         <div class="card-footer">
                             <a href="" v-on:click.prevent="Regresar" class="btn btn-primary" 
                             v-if="
                                 seccion_actual.componente!='1_1' &&
                                 seccion_actual.componente!='2_1' &&
                                 seccion_actual.componente!='3_1' &&
-                                seccion_actual.componente!='4_1' && 
-                                seccion_actual.componente!='5_1'
+                                seccion_actual.componente!='4_1'
                             ">
                                 <i class="material-icons btn__icon--right mr-1">keyboard_backspace</i>
                                 Regresar
                             </a>
-                            <a href="" v-show="seccion_actual.componente!='5_1'" v-on:click.prevent="Continuar" class="btn btn-primary float-right">
+                            <a href="" v-show="seccion_actual.componente!='4_1'" v-on:click.prevent="Continuar" class="btn btn-primary float-right">
                                 Continuar <i class="material-icons btn__icon--right">play_arrow</i>
                             </a>
                         </div>
@@ -78,7 +77,7 @@ import Tema3Seccion2 from './Secciones/tema3seccion2.vue';
 import Tema3Seccion3 from './Secciones/tema3seccion3.vue';
 import Tema3Seccion4 from './Secciones/tema3seccion4.vue';
 import Tema3Seccion5 from './Secciones/tema3seccion5.vue';
-import Tema5Seccion1 from './Secciones/tema5seccion1.vue';
+import Tema4Seccion1 from './Secciones/tema4seccion1.vue';
 import ContadorView from './Contador.vue';
 import ListaTemasView from './Lista_Temas.vue';
 export default {
@@ -90,7 +89,7 @@ export default {
         tema3seccion3:Tema3Seccion3, 
         tema3seccion4:Tema3Seccion4, 
         tema3seccion5:Tema3Seccion5, 
-        tema5seccion1:Tema5Seccion1,        
+        tema4seccion1:Tema4Seccion1,        
         contadorview:ContadorView,
         listatemasview:ListaTemasView
     },
