@@ -53,8 +53,15 @@
 export default {
     name:'tema1seccion1',
     methods:{
+        Validar() {
+            this.curso.continuar = (this.curso.temas[0].secciones[0].preguntas[0].respuesta.length !== 0);
+        }
     },
     mounted(){
+        this.Validar();
+    },
+    updated() {
+        this.Validar();
     },
     computed:{
         curso(){
