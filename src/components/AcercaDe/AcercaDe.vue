@@ -60,7 +60,7 @@
                 <div class="col-lg-8 mt-3 text-center">
                   <h5><b>Desarrolladores:</b></h5>
                   <h6>M.A. Sergio Ordoñez </h6>
-                  <h6>Ing. Rodrigo Aldair Villazuza Gaytán</h6>
+                  <h6>Secretaria de Información</h6>
                 </div>
                
               </div>

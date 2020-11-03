@@ -27,6 +27,9 @@
                 <div class="col-12 mt-3 text-center">
                   <b>Paso 2.</b> Contesta desde tu punto de vista las siguientes preguntas. Independientemente, de por qué el padre señale a su hija. 
                 </div>
+                <br>
+                <br>
+                 <div align="center"> <img src="../../../img/empatia.png" width="400" height="200"> </div>
             <div class="row mt-5">
                 <div class="col-md-12 text-center form-group">  
                     <label>
@@ -66,7 +69,7 @@ export default {
     methods:{
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
-            var columns = ["Planning Personal de índole vertical"];
+            var columns = ["En los zapatos de otros"];
             var data = [
                 [
                     '¿Qué te dice la imagen?'

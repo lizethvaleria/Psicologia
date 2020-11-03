@@ -3,11 +3,11 @@
         <div class="card-header">
             <div class="media align-items-center">
                <div class="media-left">
-                    <h4 class="mb-0"><strong>3</strong></h4>
+                    <h4 class="mb-0"><strong>1</strong></h4>
                 </div>
                 <div class="media-body">
                     <h4 class="card-title">
-                        C.	El sendero de mis emociones
+                        	El sendero de mis emociones
                     </h4>
                 </div>
             </div>
@@ -104,7 +104,7 @@ export default {
     methods:{
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
-            var columns = ["Planning Personal de índole vertical"];
+            var columns = ["Mis ventanas ante la vida"];
             var data = [
                 [
                     '¿Qué es lo que más me agrada de mí?'

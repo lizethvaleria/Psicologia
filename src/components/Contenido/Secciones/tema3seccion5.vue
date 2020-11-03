@@ -21,9 +21,13 @@
                     <b>Ejercicio: La ley de mi espejo.</b>
                 </div>
             </div>
+              
             <div class="col-12 mt-3 text-center">
                   <b>Paso 1.</b> Desarrolla tu propia ley del espejo, por favor se honesto. ¡No te falles a ti mismo!
                 </div>
+                <br>
+                <br>
+                  <div align="center"> <img src="../../../img/ley.png" width="400" height="300"> </div>
             <div class="row mt-5">
                 <div class="col-md-12 text-center form-group">  
                     <label>
@@ -42,12 +46,13 @@
                      	<b>Tercera Ley</b>¿Qué es lo que me gusta de mí y sé que a los demás también? 
                     </label>
                     <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[5].respuesta" rows="3"></textarea>
-            </div>
-             <div class="col-md-12 text-center mt-5 form-group">
+                </div>
+                    <div class="col-md-12 text-center mt-5 form-group">
                     <label>
                       <b>Cuarta Ley</b>	¿Qué es lo más me critican y desean que cambie, pero sé que no soy así? Más bien está en los demás.
                     </label>
                     <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[4].preguntas[7].respuesta" rows="3"></textarea>
+                     </div>
             </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-6 text-center">
@@ -56,7 +61,7 @@
             </div>
         </div>
     </div>
-</div>
+
 </template>
 
 <script>
@@ -68,7 +73,7 @@ export default {
     methods:{
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
-            var columns = ["Planning Personal de índole vertical"];
+            var columns = [" La ley de mi espejo"];
             var data = [
                 [
                     '¿Qué es lo que más me molesta de los demás, pero sé que también está en mí?'

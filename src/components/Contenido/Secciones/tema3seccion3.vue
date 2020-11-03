@@ -24,6 +24,10 @@
             <div class="col-12 mt-3 text-center">
                   <b>Paso 1.</b> Desarrollo el modelo mi árbol de logros.
                 </div>
+              
+               
+             <div align="center"> <img src="../../../img/automotivacion.png" width="400" height="400"> </div>
+            
             <div class="row mt-5">
                 <div class="col-md-12 text-center form-group">  
                     <label>
@@ -66,6 +70,8 @@
 </template>
 
 <script>
+
+
 export default {
     name:'tema3seccion3',
     updated(){
@@ -74,7 +80,7 @@ export default {
     methods:{
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
-            var columns = ["Planning Personal de índole vertical"];
+            var columns = [" Mi árbol de logros"];
             var data = [
                 [
                     'Mis raíces/¿Qué me sostiene en esta vida? '
@@ -134,7 +140,8 @@ export default {
                 this.curso.continuar=true;
             }
         }
-    },
+    
+   },
     computed:{
         curso(){
           return this.$store.getters.getCurso;

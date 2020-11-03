@@ -8,23 +8,19 @@
       <div class="col-12 mt-3 text-center">
         <h3>Mensaje del Rector</h3>
       </div>
-      <div class="col-12 text-center">
+      <div class="col-12 text-center center ">
         <p>
           Es un gusto saludarte en esta ocasión por este medio y a su vez deseo
           reconocer tu gran esfuerzo y dedicación por llevar a cabo muy
           puntualmente el programa DIME (Desarrollo Integral del Manejo
           Emocional), el cual es una valiosa oportunidad para contribuir con tu
           plan de vida y carrera.
-        </p>
-
-        <p>
+       
           Eres nuestra razón de SER y es por ello que creamos este programa para
           ti, ya que deseamos acompañarte en esta etapa socio-afectiva, que
           resulta esencial para enfrentar y resolver conflictos propios de tu
           edad y venideros en un futuro.
-        </p>
-
-        <p>
+      
           El <b><i>Seminario de Counseling Virtual DIME</i></b
           >, es una plataforma de 6 horas (tu elijes tu ritmo) que te permitirá
           el desarrollo de habilidades intra e interpersonales, por mencionarte
@@ -48,10 +44,10 @@
         </p>
         <strong
           ><h4>
-            No te detengas, transfórmate y trasciende. Ing. Rogelio G. Garza
-            Rivera. Rector
-          </h4></strong
-        >
+            No te detengas, transfórmate y trasciende. 
+          </h4></strong>
+        <strong><h4> Ing. Rogelio G. Garza Rivera.</h4></strong>
+        <h5> Rector </h5>
       </div>
 
       <div class="col-12 mt-5 mb-5 text-center" v-if="!curso.reglas_aceptadas">

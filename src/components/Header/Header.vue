@@ -8,7 +8,7 @@
 
                         <!-- Brand -->
                         <a href="#" class="navbar-brand">
-                            Manejo del Estrés
+                            Seminario de Counseling Virtual DIME
                         </a>
                         
                         <button class="navbar-toggler navbar-toggler-right mr-0" data-toggle="collapse" data-target="#navbarsExample03" type="button">

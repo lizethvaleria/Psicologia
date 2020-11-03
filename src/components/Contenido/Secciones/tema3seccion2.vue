@@ -21,9 +21,6 @@
                 </div>
                 <br>
                 <br>
-                <div class="col-12 mt3 text-center">
-                    <b>Ejercicio: Mis ventanas ante la vida.</b>
-                </div>
             </div>
             <div class="col-12 mt-3 text-center">
                   <b>Paso 1.</b> Elabora los dos siguientes cuadrantes alusivos a la herramienta - SPECC.
@@ -112,7 +109,7 @@ export default {
     methods:{
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
-            var columns = ["Planning Personal de índole vertical"];
+            var columns = ["SPECC Situación – Pensamiento - Emoción- Conducta -Consecuencia"];
             var data = [
                 [
                     '  Piensa en una situación en la que estuviste feliz. '
