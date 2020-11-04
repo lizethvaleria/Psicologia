@@ -220,14 +220,29 @@
                 <div class="col-md-10 mt-5">
                   <div class="row justify-content-center">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
+                      <label for="email">Email</label>
                       <input
                         type="email"
                         class="form-control"
-                        id="input"
-                        aria-describedby="emailHelp"
+                        id="email"
                         placeholder="Ingrese email"
                         v-model="curso.usuario.email"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-10 mt-5">
+                  <div class="row justify-content-center">
+                    <div class="form-group">
+                      <label for="matricula">Matrícula</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="matricula"
+                        placeholder="Ingrese matrícula"
+                        v-model="curso.usuario.matricula"
                       />
                     </div>
                   </div>
@@ -284,13 +299,21 @@ export default {
         return expression.test(email.toLowerCase());
       };
 
+      const matriculaIsValid = matricula => {
+        const expression = /^\d+$/;
+        return expression.test(matricula) && matricula.length === 7;
+      };
+
       if (
         !(
           this.curso.usuario.estudiante_uanl &&
-          emailIsValid(this.curso.usuario.email)
+          emailIsValid(this.curso.usuario.email) &&
+          matriculaIsValid(this.curso.usuario.matricula)
         )
       ) {
-        alert("Todos las preguntas son obligatorias");
+        alert(
+          "Todos las preguntas son obligatorias.\nAsegúrese de ingresar un email y matrícula válidos."
+        );
       } else {
         $(".preloader").fadeIn();
         this.curso.informacion_llenada = true;

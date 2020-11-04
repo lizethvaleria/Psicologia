@@ -12,6 +12,7 @@ export default {
           trabajo:null,
           nomtrabajo:'',
           email:'',
+          matricula: '',
           estatus:1
         },
         fecha:'',
