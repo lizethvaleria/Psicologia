@@ -216,6 +216,23 @@
                   </div>
                 </div>
               </div>
+              <div class="row justify-content-center">
+                <div class="col-md-10 mt-5">
+                  <div class="row justify-content-center">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="input"
+                        aria-describedby="emailHelp"
+                        placeholder="Ingrese email"
+                        v-model="curso.usuario.email"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -262,7 +279,17 @@ export default {
       //this.Guardar_En_Firebase();
     },
     Continuar() {
-      if (!this.curso.usuario.estudiante_uanl) {
+      const emailIsValid = email => {
+        const expression = /\S+@\S+\.\S+/;
+        return expression.test(email.toLowerCase());
+      };
+
+      if (
+        !(
+          this.curso.usuario.estudiante_uanl &&
+          emailIsValid(this.curso.usuario.email)
+        )
+      ) {
         alert("Todos las preguntas son obligatorias");
       } else {
         $(".preloader").fadeIn();
