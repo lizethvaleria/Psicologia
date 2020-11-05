@@ -117,100 +117,134 @@
                   </div>
                 </div>
               </div>
-              <div class="row justify-content-center">
-                <div class="col-md-10 mt-5">
-                  <div class="row justify-content-center">
-                    <div
-                      class="col-8 col-md-10"
-                      v-if="
-                        curso.usuario.estudiante_uanl == 'si' ||
-                          curso.usuario.estudiante_uanl == 'egresado'
-                      "
-                    >
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <label class="input-group-text" for="preparatoria"
-                            >Preparatoria</label
+              <div
+                v-if="
+                  ['si', 'egresado'].indexOf(curso.usuario.estudiante_uanl) >= 0
+                "
+              >
+                <div class="row justify-content-center">
+                  <div class="col-md-10 mt-5">
+                    <div class="row justify-content-center">
+                      <div class="col-8 col-md-10">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <label class="input-group-text" for="preparatoria"
+                              >Preparatoria</label
+                            >
+                          </div>
+                          <select
+                            class="custom-select"
+                            v-model="curso.usuario.preparatoria"
+                            id="preparatoria"
                           >
+                            <option value="Preparatoria1"
+                              >Preparatoria 1</option
+                            >
+                            <option value="Preparatoria2"
+                              >Preparatoria 2</option
+                            >
+                            <option value="Preparatoria3"
+                              >Preparatoria 3</option
+                            >
+                            <option value="Preparatoria4"
+                              >Preparatoria 4</option
+                            >
+                            <option value="Preparatoria5"
+                              >Preparatoria 5</option
+                            >
+                            <option value="Preparatoria6"
+                              >Preparatoria 6</option
+                            >
+                            <option value="Preparatoria7"
+                              >Preparatoria 7</option
+                            >
+                            <option value="Preparatoria8"
+                              >Preparatoria 8</option
+                            >
+                            <option value="Preparatoria9"
+                              >Preparatoria 9</option
+                            >
+                            <option value="Preparatoria10"
+                              >Preparatoria 10</option
+                            >
+                            <option value="Preparatoria11"
+                              >Preparatoria 11</option
+                            >
+                            <option value="Preparatoria12"
+                              >Preparatoria 12</option
+                            >
+                            <option value="Preparatoria13"
+                              >Preparatoria 13</option
+                            >
+                            <option value="Preparatoria14"
+                              >Preparatoria 14</option
+                            >
+                            <option value="Preparatoria15"
+                              >Preparatoria 15</option
+                            >
+                            <option value="Preparatoria16"
+                              >Preparatoria 16</option
+                            >
+                            <option value="Preparatoria17"
+                              >Preparatoria 17</option
+                            >
+                            <option value="Preparatoria18"
+                              >Preparatoria 18</option
+                            >
+                            <option value="Preparatoria19"
+                              >Preparatoria 19</option
+                            >
+                            <option value="Preparatoria20"
+                              >Preparatoria 20</option
+                            >
+                            <option value="Preparatoria21"
+                              >Preparatoria 21</option
+                            >
+                            <option value="Preparatoria22"
+                              >Preparatoria 22</option
+                            >
+                            <option value="Preparatoria23"
+                              >Preparatoria 23</option
+                            >
+                            <option value="Preparatoria24"
+                              >Preparatoria 24</option
+                            >
+                            <option value="Preparatoria25"
+                              >Preparatoria 25</option
+                            >
+                            <option value="AlvaroObregon"
+                              >Escuela Industrial y Preparatoria Técnica "Álvaro
+                              Obregón"</option
+                            >
+                            <option value="CIDEB"
+                              >Centro de Investigación y Desarrollo en Educación
+                              Bilingüe CIDEB</option
+                            >
+                            <option value="PabloLivas"
+                              >Escuela Industrial y Preparatoria Técnica "Pablo
+                              Livas"</option
+                            >
+                            <option value="TecnicaMedica"
+                              >Escuela y Preparatoria Técnica Médica</option
+                            >
+                          </select>
                         </div>
-                        <select
-                          class="custom-select"
-                          v-model="curso.usuario.preparatoria"
-                          id="preparatoria"
-                        >
-                          <option value="Preparatoria1">Preparatoria 1</option>
-                          <option value="Preparatoria2">Preparatoria 2</option>
-                          <option value="Preparatoria3">Preparatoria 3</option>
-                          <option value="Preparatoria4">Preparatoria 4</option>
-                          <option value="Preparatoria5">Preparatoria 5</option>
-                          <option value="Preparatoria6">Preparatoria 6</option>
-                          <option value="Preparatoria7">Preparatoria 7</option>
-                          <option value="Preparatoria8">Preparatoria 8</option>
-                          <option value="Preparatoria9">Preparatoria 9</option>
-                          <option value="Preparatoria10"
-                            >Preparatoria 10</option
-                          >
-                          <option value="Preparatoria11"
-                            >Preparatoria 11</option
-                          >
-                          <option value="Preparatoria12"
-                            >Preparatoria 12</option
-                          >
-                          <option value="Preparatoria13"
-                            >Preparatoria 13</option
-                          >
-                          <option value="Preparatoria14"
-                            >Preparatoria 14</option
-                          >
-                          <option value="Preparatoria15"
-                            >Preparatoria 15</option
-                          >
-                          <option value="Preparatoria16"
-                            >Preparatoria 16</option
-                          >
-                          <option value="Preparatoria17"
-                            >Preparatoria 17</option
-                          >
-                          <option value="Preparatoria18"
-                            >Preparatoria 18</option
-                          >
-                          <option value="Preparatoria19"
-                            >Preparatoria 19</option
-                          >
-                          <option value="Preparatoria20"
-                            >Preparatoria 20</option
-                          >
-                          <option value="Preparatoria21"
-                            >Preparatoria 21</option
-                          >
-                          <option value="Preparatoria22"
-                            >Preparatoria 22</option
-                          >
-                          <option value="Preparatoria23"
-                            >Preparatoria 23</option
-                          >
-                          <option value="Preparatoria24"
-                            >Preparatoria 24</option
-                          >
-                          <option value="Preparatoria25"
-                            >Preparatoria 25</option
-                          >
-                          <option value="AlvaroObregon"
-                            >Escuela Industrial y Preparatoria Técnica "Álvaro
-                            Obregón"</option
-                          >
-                          <option value="CIDEB"
-                            >Centro de Investigación y Desarrollo en Educación
-                            Bilingüe CIDEB</option
-                          >
-                          <option value="PabloLivas"
-                            >Escuela Industrial y Preparatoria Técnica "Pablo
-                            Livas"</option
-                          >
-                          <option value="TecnicaMedica"
-                            >Escuela y Preparatoria Técnica Médica</option
-                          >
-                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 mt-5">
+                      <div class="row justify-content-center">
+                        <div class="form-group">
+                          <label for="matricula">Matrícula</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="matricula"
+                            placeholder="Ingrese matrícula"
+                            v-model="curso.usuario.matricula"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -227,22 +261,6 @@
                         id="email"
                         placeholder="Ingrese email"
                         v-model="curso.usuario.email"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-md-10 mt-5">
-                  <div class="row justify-content-center">
-                    <div class="form-group">
-                      <label for="matricula">Matrícula</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="matricula"
-                        placeholder="Ingrese matrícula"
-                        v-model="curso.usuario.matricula"
                       />
                     </div>
                   </div>
@@ -293,30 +311,31 @@ export default {
       this.setCurso(this.curso);
     },
     Continuar() {
-      const emailIsValid = email => {
+      const validateEmail = email => {
         const expression = /\S+@\S+\.\S+/;
         return expression.test(email.toLowerCase());
       };
 
-      const matriculaIsValid = matricula => {
+      const validateMatricula = matricula => {
         const expression = /^\d+$/;
         return expression.test(matricula) && matricula.length === 7;
       };
 
       if (
-        !(
-          this.curso.usuario.estudiante_uanl &&
-          emailIsValid(this.curso.usuario.email) &&
-          matriculaIsValid(this.curso.usuario.matricula)
-        )
+        validateEmail(this.curso.usuario.email) &&
+        (this.curso.usuario.estudiante_uanl === "no" ||
+          (this.curso.usuario.estudiante_uanl &&
+            validateMatricula(this.curso.usuario.matricula) &&
+            this.curso.usuario.preparatoria))
       ) {
+        $(".preloader").fadeIn();
+        this.curso.informacion_llenada = true;
+        this.Guardar_En_LocalStorage();
+        this.Guardar_En_Firebase("si");
+      } else {
         alert(
           "Todos las preguntas son obligatorias.\nAsegúrese de ingresar un email y matrícula válidos."
         );
-      } else {
-        // $(".preloader").fadeIn();
-        this.curso.informacion_llenada = true;
-        this.setCurso(this.curso);
       }
     },
     ...mapActions([
