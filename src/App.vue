@@ -5,12 +5,6 @@
 <script>
 import { mapActions } from 'vuex';
 export default {
-  methods:{
-    ...mapActions(['LocalStorage_Avance'])
-  },
-  created(){
-    this.LocalStorage_Avance();
-  },
 };
 </script>
 
