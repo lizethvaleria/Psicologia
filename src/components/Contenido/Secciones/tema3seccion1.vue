@@ -102,6 +102,66 @@ export default {
         this.Validar();
     },
     methods:{
+        LlenarPreguntas() {
+            var data = [
+                {
+                    respuesta: '¿Qué es lo que más me agrada de mí?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[1].respuesta
+                },
+                {
+                    respuesta: '¿Qué es lo que más me molesta de mí?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[3].respuesta
+                },
+                {
+                    respuesta: '¿Cómo considero que me ven los demás usualmente?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[5].respuesta
+                },
+                {
+                    respuesta: '¿Cuáles son mis principales talentos?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[7].respuesta
+                },
+                {
+                    respuesta: '¿Cómo es mi relación con mi familia en general?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[9].respuesta
+                },
+                {
+                    respuesta: '¿Cómo me relaciono con mis amistades en general?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[11].respuesta
+                },
+                {
+                    respuesta: 'En mi infancia fui un niño/a: '
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[13].respuesta
+                },
+                {
+                    respuesta: '¿Cómo me veo respecto a mi presente? '
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[15].respuesta
+                },
+                {
+                    respuesta: '¿Cómo me veo respecto a mi futuro?'
+                },
+                {
+                    respuesta: this.curso.temas[2].secciones[0].preguntas[17].respuesta
+                }
+            ];
+
+            this.curso.temas[2].secciones[0].preguntas = data;
+        },
         Crear_PDF(){
             var pdf = new jsPDF('landscape');
             var columns = ["Mis ventanas ante la vida"];
@@ -207,6 +267,7 @@ export default {
         }
     },
     mounted(){
+        this.LlenarPreguntas();
         this.Validar();
     }
 };

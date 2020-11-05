@@ -199,11 +199,11 @@ export default {
     }
   },
   actions: {
-    setCurso({ commit }, curso) {
-      commit('setCurso', curso);
-      this.actualizarEnFirestore();
-      this.guardarEnLocalStorage();
-    }, 
+    setCurso({ commit, dispatch }, curso) {
+      commit("setCurso", curso);
+      dispatch("actualizarEnFirestore");
+      dispatch("guardarEnLocalStorage");
+    },
     actualizarEnFirestore({ state }) {
       const curso = Object.assign({}, state.curso);
       curso.fecha = firebase.firestore.FieldValue.serverTimestamp();
@@ -217,11 +217,12 @@ export default {
       localStorage.cursouanlestres2020 = JSON.stringify(state.curso);
     },
     avanzarSeccion({ state, dispatch }) {
+      console.log("Avanzando seccion: ", state.curso);
       let tema = state.curso.temas[state.curso.tema_actual - 1];
       // On last seccion of last tema
       if (
         state.curso.tema_actual === state.curso.temas.length &&
-        state.curso.seccion_actual === tema.seccion_actual.length
+        state.curso.seccion_actual === tema.secciones.length
       ) {
         return;
       }
@@ -377,7 +378,7 @@ export default {
   },
   getters: {
     getCurso(state) {
-      return Object.assign({}, state.curso);
+      return state.curso;
     }
   }
 };
