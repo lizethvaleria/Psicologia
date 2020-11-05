@@ -287,14 +287,10 @@ export default {
     Video_Visto() {
       this.curso.video_rector = true;
       this.curso.reglas_aceptadas = false;
-      // this.Guardar_En_LocalStorage();
-      //this.Guardar_En_Firebase();
     },
     Comenzar() {
       this.curso.reglas_aceptadas = true;
-      this.$store.commit('setCurso', this.curso);
-      // this.Guardar_En_LocalStorage();
-      //this.Guardar_En_Firebase();
+      this.setCurso(this.curso);
     },
     Continuar() {
       const emailIsValid = email => {
@@ -318,18 +314,13 @@ export default {
           "Todos las preguntas son obligatorias.\nAsegúrese de ingresar un email y matrícula válidos."
         );
       } else {
-        $(".preloader").fadeIn();
+        // $(".preloader").fadeIn();
         this.curso.informacion_llenada = true;
-        this.actualizarEnFirestore();
-        // this.Guardar_En_LocalStorage();
-        // this.Guardar_En_Firebase("si");
+        this.setCurso(this.curso);
       }
     },
     ...mapActions([
-      "LocalStorage_Avance",
-      "Guardar_En_LocalStorage",
-      "Guardar_En_Firebase",
-      "actualizarEnFirestore"
+      "setCurso"
     ])
   }
 };

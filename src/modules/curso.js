@@ -195,10 +195,15 @@ export default {
   },
   mutations: {
     setCurso(state, curso) {
-      state.curso = curso;
+      state.curso = Object.assign({}, curso);
     }
   },
   actions: {
+    setCurso({ commit }, curso) {
+      commit('setCurso', curso);
+      this.actualizarEnFirestore();
+      this.guardarEnLocalStorage();
+    }, 
     actualizarEnFirestore({ state }) {
       const curso = Object.assign({}, state.curso);
       curso.fecha = firebase.firestore.FieldValue.serverTimestamp();
@@ -211,7 +216,7 @@ export default {
     guardarEnLocalStorage({ state }) {
       localStorage.cursouanlestres2020 = JSON.stringify(state.curso);
     },
-    completarSeccion({ state, dispatch }) {
+    avanzarSeccion({ state, dispatch }) {
       let tema = state.curso.temas[state.curso.tema_actual - 1];
       // On last seccion of last tema
       if (
@@ -371,6 +376,8 @@ export default {
     }
   },
   getters: {
-    getCurso: state => Object.assign({}, state.curso)
+    getCurso(state) {
+      return Object.assign({}, state.curso);
+    }
   }
 };
