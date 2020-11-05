@@ -280,17 +280,18 @@ export default {
   },
   mounted() {
     this.Video_Visto();
+    console.log("Initial curso: ", this.curso);
   },
   methods: {
     Video_Visto() {
       this.curso.video_rector = true;
       this.curso.reglas_aceptadas = false;
-      this.Guardar_En_LocalStorage();
+      // this.Guardar_En_LocalStorage();
       //this.Guardar_En_Firebase();
     },
     Comenzar() {
       this.curso.reglas_aceptadas = true;
-      this.Guardar_En_LocalStorage();
+      // this.Guardar_En_LocalStorage();
       //this.Guardar_En_Firebase();
     },
     Continuar() {
@@ -317,14 +318,16 @@ export default {
       } else {
         $(".preloader").fadeIn();
         this.curso.informacion_llenada = true;
-        this.Guardar_En_LocalStorage();
-        this.Guardar_En_Firebase("si");
+        this.actualizarEnFirestore();
+        // this.Guardar_En_LocalStorage();
+        // this.Guardar_En_Firebase("si");
       }
     },
     ...mapActions([
       "LocalStorage_Avance",
       "Guardar_En_LocalStorage",
-      "Guardar_En_Firebase"
+      "Guardar_En_Firebase",
+      "actualizarEnFirestore"
     ])
   },
   computed: {

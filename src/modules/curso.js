@@ -201,11 +201,13 @@ export default {
   },
   actions: {
     actualizarEnFirestore({ state }) {
+      const curso = Object.assign({}, state.curso);
+      curso.fecha = firebase.firestore.FieldValue.serverTimestamp();
       firebase
         .firestore()
         .collection("curso")
-        .doc(state.curso.idfirebase)
-        .set(state.curso);
+        .doc(curso.idfirebase)
+        .set(curso);
     },
     guardarEnLocalStorage({ state }) {
       localStorage.cursouanlestres2020 = JSON.stringify(state.curso);
