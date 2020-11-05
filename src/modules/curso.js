@@ -163,7 +163,6 @@ const curso = cursoInLocalStorage
       seccion_actual: 1
     };
 
-
 // Regresa el id del nuevo documento guardado
 const agregarAFirestore = async curso => {
   try {
@@ -183,7 +182,7 @@ const agregarAFirestore = async curso => {
 };
 
 if (!curso.idfirebase) {
-  agregarAFirestore().then(idfirebase => {
+  agregarAFirestore(curso).then(idfirebase => {
     curso.idfirebase = idfirebase;
     localStorage.cursouanlestres2020 = JSON.stringify(curso);
     console.log("Curso agregado con el id: ", curso.idfirebase);
@@ -222,12 +221,9 @@ export default {
         return;
       }
 
-      if (
-        state.curso.seccion_actual < tema.secciones.length
-      ) {
+      if (state.curso.seccion_actual < tema.secciones.length) {
         state.curso.seccion_actual++;
-      }
-      else {
+      } else {
         state.curso.tema_actual++;
         state.curso.seccion_actual = 1;
       }
@@ -375,8 +371,6 @@ export default {
     }
   },
   getters: {
-    getCurso(state) {
-      return state.curso;
-    }
+    getCurso: state => Object.assign({}, state.curso)
   }
 };

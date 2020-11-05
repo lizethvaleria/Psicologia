@@ -275,7 +275,8 @@ export default {
     return {
       time: 60,
       timer: null,
-      continuar: true
+      continuar: true,
+      curso: this.$store.getters.getCurso
     };
   },
   mounted() {
@@ -291,6 +292,7 @@ export default {
     },
     Comenzar() {
       this.curso.reglas_aceptadas = true;
+      this.$store.commit('setCurso', this.curso);
       // this.Guardar_En_LocalStorage();
       //this.Guardar_En_Firebase();
     },
@@ -329,11 +331,6 @@ export default {
       "Guardar_En_Firebase",
       "actualizarEnFirestore"
     ])
-  },
-  computed: {
-    curso() {
-      return this.$store.getters.getCurso;
-    }
   }
 };
 </script>
