@@ -31,23 +31,11 @@
                 <br>
                  <div align="center"> <img src="../../../img/empatia.png" width="400" height="200"> </div>
             <div class="row mt-5">
-                <div class="col-md-12 text-center form-group">  
+                <div :key="pregunta.mensaje" v-for="pregunta in preguntas" class="col-md-12 text-center form-group">  
                     <label>
-                       	¿Qué te dice la imagen?
+                        {{ pregunta.mensaje }}
                     </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[1].respuesta" rows="3"></textarea>
-                </div>
-                <div class="col-md-12 text-center mt-5 form-group">
-                    <label>
-                       	¿Qué te imaginas que siente la niña?
-                    </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[3].respuesta" rows="3"></textarea>
-                </div>
-                <div class="col-md-12 text-center mt-5 form-group">
-                    <label>
-                     	¿Qué te imaginas que siente el padre?? 
-                    </label>
-                    <textarea class="form-control respuesta_seccion3" v-model="curso.temas[2].secciones[3].preguntas[5].respuesta" rows="3"></textarea>
+                    <textarea class="form-control respuesta_seccion3" v-model="pregunta.respuesta" rows="3"></textarea>
                 </div>
             </div>
             <div class="row mt-5 justify-content-center">
@@ -61,64 +49,19 @@
 </template>
 
 <script>
+import { downloadPreguntasPDF } from "@/services/jspdf";
+
 export default {
     name:'tema3seccion4',
-    updated(){
-        this.Validar();
-    },
     methods:{
         Crear_PDF(){
-            var pdf = new jsPDF('landscape');
-            var columns = ["En los zapatos de otros"];
-            var data = [
-                [
-                    '¿Qué te dice la imagen?'
-                ],
-                [
-                    this.curso.temas[2].secciones[3].preguntas[1].respuesta
-                ],
-                [
-                    '¿Qué te imaginas que siente la niña?'
-                ],
-                [
-                    this.curso.temas[2].secciones[3].preguntas[3].respuesta
-                ],
-                [
-                    '¿Qué te imaginas que siente el padre?? '
-                ],
-                [
-                    this.curso.temas[2].secciones[3].preguntas[5].respuesta
-                ],
-            ];
-
-            pdf.autoTable(columns,data,
-                { margin:{ top: 25 }}
-            );
-
-            pdf.save("planning_personal.pdf");
+            downloadPreguntasPDF('En los zapatos de otros', this.preguntas, 'tema3_seccion4.pdf');
         },
-        Validar(){
-            if(this.curso.temas[2].secciones[3].preguntas[1].respuesta.length==0){
-                this.curso.continuar=false;
-            }
-            else if(this.curso.temas[2].secciones[3].preguntas[3].respuesta.length==0){
-                this.curso.continuar=false;
-            }
-            else if(this.curso.temas[2].secciones[3].preguntas[5].respuesta.length==0){
-                this.curso.continuar=false;
-            }
-            else{
-                this.curso.continuar=true;
-            }
-        }
     },
-    computed:{
-        curso(){
-          return this.$store.getters.getCurso;
+    data() {
+        return {
+            preguntas: this.$store.getters.getCurso.temas[2].secciones[3].preguntas
         }
-    },
-    mounted(){
-        this.Validar();
     }
 };
 </script>

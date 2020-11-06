@@ -187,6 +187,7 @@ export default {
       const seccionActiva = this.curso.temas[this.curso.tema_actual - 1]
         .secciones[this.curso.seccion_actual - 1];
       if (this.Validar(seccionActiva)) {
+        this.setCurso(this.curso);
         this.avanzarSeccion();
         this.curso = this.$store.getters.getCurso;
 
@@ -225,7 +226,7 @@ export default {
       }
       console.log("Componente: ", this.componente);
     },
-    ...mapActions(["Seccion_Completada", "avanzarSeccion"])
+    ...mapActions(["Seccion_Completada", "avanzarSeccion", "setCurso", "avanzarSeccion"])
   },
   mounted() {
     this.Colocar_Seccion(this.curso);
@@ -239,6 +240,7 @@ export default {
   }
 };
 </script>
+
 <style>
 .stepwizard-step p {
   margin-top: 10px;

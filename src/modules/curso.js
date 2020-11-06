@@ -30,6 +30,20 @@ const curso = cursoInLocalStorage
       reglas_aceptadas: false,
       informacion_llenada: false,
       temas: [
+        // {
+        //   numero: 1,
+        //   nombre: "Observar y Conocer",
+        //   active: false,
+        //   completado: false,
+        //   secciones: [
+        //     {
+        //       numero: 1,
+        //       active: false,
+        //       completado: false,
+        //       preguntas: [{ respuesta: "" }]
+        //     }
+        //   ]
+        // },
         {
           numero: 1,
           nombre: "Observar y Conocer",
@@ -40,7 +54,14 @@ const curso = cursoInLocalStorage
               numero: 1,
               active: false,
               completado: false,
-              preguntas: [{ respuesta: "" }]
+              preguntas: [{ respuesta: "" }],
+              preguntas: [
+                {
+                  mensaje:
+                    "¿Qué aprendizajes te deja el video “Mis grietas valen oro”?",
+                  respuesta: ""
+                }
+              ]
             }
           ]
         },
@@ -62,24 +83,42 @@ const curso = cursoInLocalStorage
               active: false,
               completado: false,
               preguntas: [
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" }
+                {
+                  mensaje: "¿Qué es lo que más me agrada de mí?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Qué es lo que más me molesta de mí?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cómo considero que me ven los demás usualmente?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cuáles son mis principales talentos?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cómo es mi relación con mi familia en general?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cómo me relaciono con mis amistades en general?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "En mi infancia fui un niño/a: ",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cómo me veo respecto a mi presente? ",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Cómo me veo respecto a mi futuro?",
+                  respuesta: ""
+                }
               ]
             },
             {
@@ -87,27 +126,56 @@ const curso = cursoInLocalStorage
               active: false,
               completado: false,
               preguntas: [
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" }
+                {
+                  mensaje:
+                    "Situacion. Piensa en una situación en la que estuviste feliz",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Pensamiento. ¿Qué pensamientos pasaron por tu mente en ese momento?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Emoción. ¿Qué emociones tuviste? (entusiasmo, alegría, etc.)",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Conducta. ¿Cómo te comportaste/actuaste en esta situación?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Consecuencia. ¿Qué consecuencias tuviste por actuar?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Situación. Piensa en una situación en la que te enojaste",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Pensamiento. ¿Qué pensamientos pasaron por tu mente en ese momento?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Emociones. ¿Qué emociones tuviste? (enojo, ira, etc.)",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Conducta. ¿Cómo te comportaste/actuaste en esa situación?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Consecuencia. ¿Qué consecuencias tuviste por actuar?",
+                  respuesta: ""
+                }
               ]
             },
             {
@@ -115,16 +183,26 @@ const curso = cursoInLocalStorage
               active: false,
               completado: false,
               preguntas: [
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" }
+                {
+                  mensaje: "Mis raíces. ¿Qué me sostiene en esta vida?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "Tronco. ¿Qué meta me puedo proponer?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "Ramas. ¿Por qué deseo esa meta?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "Hojas. ¿Qué debo hacer para lograr esa meta?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "Frutos. ¿Qué espero lograr con esa meta?",
+                  respuesta: ""
+                }
               ]
             },
             {
@@ -132,13 +210,18 @@ const curso = cursoInLocalStorage
               active: false,
               completado: false,
               preguntas: [
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" }
+                {
+                  mensaje: "¿Qué te dice la imagen?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Qué te imaginas que siente la niña?",
+                  respuesta: ""
+                },
+                {
+                  mensaje: "¿Qué te imaginas que siente el padre?",
+                  respuesta: ""
+                }
               ]
             },
             {
@@ -146,14 +229,26 @@ const curso = cursoInLocalStorage
               active: false,
               completado: false,
               preguntas: [
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" },
-                { respuesta: "" }
+                {
+                  mensaje:
+                    "Primera Ley. ¿Qué es lo que más me molesta de los demás, pero sé que también está en mí?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Segunda Ley. ¿Qué es lo que más me critican y me duele, pero me cuesta cambiarlo/trabajarlo?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Tercera Ley. ¿Qué es lo que me gusta de mí y sé que a los demás también?",
+                  respuesta: ""
+                },
+                {
+                  mensaje:
+                    "Cuarta Ley. ¿Qué es lo que más me critican y desean que cambie, pero sé que no soy así? Más bien está en los demás",
+                  respuesta: ""
+                }
               ]
             }
           ]
