@@ -40,15 +40,33 @@ export default {
 
         const seccionesSinContestar = tema.secciones.filter(seccion =>
           seccion.preguntas
-            ? seccion.preguntas.filter(pregunta => !pregunta.respuesta)
-                .length !== 0
+            ? seccion.preguntas.filter(pregunta => pregunta.respuesta)
+                .length === 0
             : false
         );
 
         return seccionesSinContestar.length === 0;
       };
 
-      if (tema.numero === 1 || temaTerminado(tema.numero - 1)) {
+      const primeraSeccionContestada = numeroTema => {
+        const primerSeccion = this.curso.temas[numeroTema - 1].secciones[0];
+        if (!primerSeccion.preguntas) {
+          return true;
+        }
+        const preguntasContestadasPrimerSeccion = primerSeccion.preguntas.filter(
+          pregunta => pregunta.respuesta
+        );
+        return (
+          preguntasContestadasPrimerSeccion.length ===
+          primerSeccion.preguntas.length
+        );
+      };
+
+      if (
+        tema.numero === 1 ||
+        (primeraSeccionContestada(tema.numero) &&
+          temaTerminado(tema.numero - 1))
+      ) {
         this.curso.tema_actual = tema.numero;
         this.curso.seccion_actual = 1;
         this.curso.finalizado = false;
