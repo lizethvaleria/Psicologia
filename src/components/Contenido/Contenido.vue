@@ -7,7 +7,7 @@
     >
       <div class="mdk-drawer-layout__content page ">
         <div class="container-fluid page__container px-0 px-md-3">
-          <div class="card-group justify-content-center">
+          <div v-if="tema_actual" class="card-group justify-content-center">
             <div class="col-12 text-center">
               <h4>Zona {{ tema_actual.numero }}. {{ tema_actual.nombre }}</h4>
             </div>
@@ -15,6 +15,7 @@
               <div class="stepwizard-row setup-panel">
                 <div
                   class="stepwizard-step"
+                  :key="seccion.numero"
                   v-for="seccion of tema_actual.secciones"
                 >
                   <a
@@ -138,12 +139,7 @@ export default {
   },
   data() {
     return {
-      tema_actual: {
-        nombre: "",
-        numero: "",
-        active: false,
-        secciones: []
-      },
+      tema_actual: null,
       seccion_actual: {
         componente: "1_1",
         numero_tema: 1,
@@ -154,35 +150,6 @@ export default {
     };
   },
   methods: {
-    Ir_A_Seccion(seccion) {
-      for (
-        var x = 0;
-        x <
-        this.curso.temas[this.seccion_actual.numero_tema - 1].secciones.length;
-        x++
-      ) {
-        this.curso.temas[this.seccion_actual.numero_tema - 1].secciones[
-          x
-        ].active = false;
-        console.log(
-          this.curso.temas[this.seccion_actual.numero_tema - 1].secciones[x]
-            .numero +
-            "==" +
-            seccion.numero
-        );
-        if (
-          this.curso.temas[this.seccion_actual.numero_tema - 1].secciones[x]
-            .numero == seccion.numero
-        ) {
-          console.log("entre");
-          this.curso.temas[this.seccion_actual.numero_tema - 1].secciones[
-            x
-          ].active = true;
-        }
-      }
-
-      this.Colocar_Seccion(this.curso);
-    },
     Continuar() {
       const seccionActiva = this.curso.temas[this.curso.tema_actual - 1]
         .secciones[this.curso.seccion_actual - 1];
@@ -191,8 +158,6 @@ export default {
         this.avanzarSeccion();
         this.curso = this.$store.getters.getCurso;
 
-        // this.seccion_actual.componente =
-        //   siguiente_tema + "_" + siguiente_seccion;
         this.Colocar_Seccion(this.curso);
         window.scrollTo(0, 0);
       } else {
@@ -218,15 +183,19 @@ export default {
       this.Colocar_Seccion_Actual();
     },
     Colocar_Seccion(curso) {
-      console.log("Curso", curso);
-      if (curso != null) {
-        const temaActual = curso.temas[curso.tema_actual - 1];
-        const seccionActual = temaActual.secciones[curso.seccion_actual - 1];
-        this.componente = `${this.curso.tema_actual}_${this.curso.seccion_actual}`;
+      if (!curso) {
+        return;
       }
-      console.log("Componente: ", this.componente);
+      if (this.curso.finalizado) {
+        this.componente = "4_1";
+      } else {
+        const temaActual = curso.temas[curso.tema_actual - 1];
+        this.tema_actual = temaActual;
+        const seccionActual = temaActual.secciones[curso.seccion_actual - 1];
+        this.componente = `${curso.tema_actual}_${curso.seccion_actual}`;
+      }
     },
-    ...mapActions(["Seccion_Completada", "avanzarSeccion", "setCurso", "avanzarSeccion"])
+    ...mapActions(["setCurso", "avanzarSeccion"])
   },
   mounted() {
     this.Colocar_Seccion(this.curso);

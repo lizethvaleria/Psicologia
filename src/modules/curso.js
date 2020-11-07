@@ -30,20 +30,6 @@ const curso = cursoInLocalStorage
       reglas_aceptadas: false,
       informacion_llenada: false,
       temas: [
-        // {
-        //   numero: 1,
-        //   nombre: "Observar y Conocer",
-        //   active: false,
-        //   completado: false,
-        //   secciones: [
-        //     {
-        //       numero: 1,
-        //       active: false,
-        //       completado: false,
-        //       preguntas: [{ respuesta: "" }]
-        //     }
-        //   ]
-        // },
         {
           numero: 1,
           nombre: "Observar y Conocer",
@@ -255,7 +241,8 @@ const curso = cursoInLocalStorage
         }
       ],
       tema_actual: 1,
-      seccion_actual: 1
+      seccion_actual: 1,
+      finalizado: false
     };
 
 // Regresa el id del nuevo documento guardado
@@ -319,10 +306,8 @@ export default {
         state.curso.tema_actual === state.curso.temas.length &&
         state.curso.seccion_actual === tema.secciones.length
       ) {
-        return;
-      }
-
-      if (state.curso.seccion_actual < tema.secciones.length) {
+        state.curso.finalizado = true;
+      } else if (state.curso.seccion_actual < tema.secciones.length) {
         state.curso.seccion_actual++;
       } else {
         state.curso.tema_actual++;
