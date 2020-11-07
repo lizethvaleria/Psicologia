@@ -102,7 +102,7 @@
             <div class="sidebar-p-y">
               <contadorview></contadorview>
               <listatemasview
-                @CambiarTema="Colocar_Seccion_Actual_Al_Cargar_La_Pagina"
+                @CambiarTema="Colocar_Seccion"
               ></listatemasview>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default {
         this.avanzarSeccion();
         this.curso = this.$store.getters.getCurso;
 
-        this.Colocar_Seccion(this.curso);
+        this.Colocar_Seccion();
         window.scrollTo(0, 0);
       } else {
         alert("Todos las preguntas son obligatorias");
@@ -182,23 +182,22 @@ export default {
       this.seccion_actual.numero_seccion = siguiente_seccion;
       this.Colocar_Seccion_Actual();
     },
-    Colocar_Seccion(curso) {
-      if (!curso) {
-        return;
-      }
+    Colocar_Seccion() {
+      this.curso = this.$store.getters.getCurso;
       if (this.curso.finalizado) {
         this.componente = "4_1";
       } else {
-        const temaActual = curso.temas[curso.tema_actual - 1];
+        const temaActual = this.curso.temas[this.curso.tema_actual - 1];
         this.tema_actual = temaActual;
-        const seccionActual = temaActual.secciones[curso.seccion_actual - 1];
-        this.componente = `${curso.tema_actual}_${curso.seccion_actual}`;
+        const seccionActual = temaActual.secciones[this.curso.seccion_actual - 1];
+        this.componente = `${this.curso.tema_actual}_${this.curso.seccion_actual}`;
       }
+      console.log("Colocando seccion: ", this.componente);
     },
     ...mapActions(["setCurso", "avanzarSeccion"])
   },
   mounted() {
-    this.Colocar_Seccion(this.curso);
+    this.Colocar_Seccion();
     // var that = this;
     // $(document).ready(function() {
     //   setTimeout(function() {

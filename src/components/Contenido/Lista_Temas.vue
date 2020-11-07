@@ -1,82 +1,68 @@
 <template>
-    <div>
-        <div class="sidebar-heading">Temas</div>
-        <ul class="list-group list-group-fit" id="ul_temas">
-            <li class="list-group-item tema_li" :class="{'active':tema.active}" v-for="tema of curso.temas">
-                <a href="" v-on:click.prevent="Ir_Tema(tema)">
-                    <span class="media align-items-center">
-                        <span class="media-left">
-                            <span class="btn btn-white btn-circle">{{'#'+tema.numero}}</span>
-                        </span>
-                        <span class="media-body">
-                            {{tema.nombre}}
-                        </span>
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </div>
+  <div>
+    <div class="sidebar-heading">Temas</div>
+    <ul class="list-group list-group-fit" id="ul_temas">
+      <li
+        class="list-group-item tema_li"
+        :class="{ active: tema.active }"
+        :key="tema.numero"
+        v-for="tema of curso.temas"
+      >
+        <a href="" v-on:click.prevent="Ir_A_Tema(tema)">
+          <span class="media align-items-center">
+            <span class="media-left">
+              <span class="btn btn-white btn-circle">{{
+                "#" + tema.numero
+              }}</span>
+            </span>
+            <span class="media-body">
+              {{ tema.nombre }}
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
-    data () {
-        return {
-          
-        }
+  data() {
+    return {
+      curso: this.$store.getters.getCurso
+    };
+  },
+  methods: {
+    Ir_A_Tema(tema) {
+      const temaTerminado = numeroTema => {
+        const tema = this.curso.temas[numeroTema - 1];
+
+        const seccionesSinContestar = tema.secciones.filter(seccion =>
+          seccion.preguntas
+            ? seccion.preguntas.filter(pregunta => !pregunta.respuesta)
+                .length !== 0
+            : false
+        );
+
+        return seccionesSinContestar.length === 0;
+      };
+
+      if (tema.numero === 1 || temaTerminado(tema.numero - 1)) {
+        this.curso.tema_actual = tema.numero;
+        this.curso.seccion_actual = 1;
+        this.curso.finalizado = false;
+        this.setCurso(this.curso);
+        this.$emit("CambiarTema");
+      }
     },
-    methods:{
-        Ir_Tema(tema){
-            if (tema.numero>1) {
-                var pasar = false;
-                var i_activo=0;
-                for (var i = 0; i < this.curso.temas.length; i++) {
-                    if (this.curso.temas[i].active) {
-                        i_activo=i;
-                    }
-                    this.curso.temas[i].active=false;
-                    if (this.curso.temas[i].numero==tema.numero) {
-                        for (var x = 0; x < this.curso.temas[i].secciones.length; x++) {
-                            this.curso.temas[i].secciones[x].active=false;
-                            if (this.curso.temas[i-1].secciones[x].completado) {
-                                this.curso.temas[i].active=true;
-                                this.curso.temas[i].secciones[x].active=true;
-                                pasar = true;
-                            }
-                        } 
-                    }
-                }
-                if (pasar) {
-                    this.$emit('CambiarTema');
-                }else{
-                    alert('Primero debes acreditar el tema '+(tema.numero-1));
-                    this.curso.temas[i_activo].active=true;
-                }
-            }else{
-                for (var i = 0; i < this.curso.temas.length; i++) {
-                    this.curso.temas[i].active=false;
-                    for (var x = 0; x < this.curso.temas[i].secciones.length; x++) {
-                        this.curso.temas[i].secciones[x].active=false;
-                    }
-                }
-                this.curso.temas[0].active=true;
-                this.curso.temas[0].secciones[0].active=true;
-                this.$emit('CambiarTema');
-            }
-        },
-        ...mapActions(['Seccion_Completada'])
-    },
-    computed:{
-        curso(){
-          return this.$store.getters.getCurso;
-        }
-    },
+    ...mapActions(["setCurso"])
+  }
 };
 </script>
 
 <style>
-    .completed{
-        background-color: #004A8F !important;
-    }
+.completed {
+  background-color: #004a8f !important;
+}
 </style>
