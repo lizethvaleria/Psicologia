@@ -20,7 +20,7 @@
                 >
                   <a
                     href=""
-                    v-on:click.prevent="Ir_A_Seccion(seccion)"
+                    v-on:click.prevent="CambiarSeccionActiva(seccion)"
                     type="button"
                     class="btn btn-circle text-white"
                     style="background-color: rgba(0, 74, 143, 0.92) !important;"
@@ -30,10 +30,10 @@
                   </a>
                   <a
                     href=""
-                    v-on:click.prevent="Ir_A_Seccion(seccion)"
+                    v-on:click.prevent="CambiarSeccionActiva(seccion)"
                     type="button"
                     class="btn btn-circle btn-primary"
-                    v-else-if="SeccionCompleta(seccion)"
+                    v-else-if="IsSeccionCompleta(seccion)"
                   >
                     {{ seccion.numero }}
                   </a>
@@ -196,7 +196,12 @@ export default {
       }
       console.log("Colocando seccion: ", this.componente);
     },
-    SeccionCompleta(seccion) {
+    CambiarSeccionActiva(seccion) {
+      this.curso.seccion_actual = seccion.numero;
+      this.setCurso(this.curso);
+      this.Colocar_Seccion();
+    },
+    IsSeccionCompleta(seccion) {
       return seccion.preguntas
         ? seccion.preguntas.filter(pregunta => pregunta.respuesta).length ===
             seccion.preguntas.length
