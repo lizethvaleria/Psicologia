@@ -24,7 +24,7 @@
                     type="button"
                     class="btn btn-circle text-white"
                     style="background-color: rgba(0, 74, 143, 0.92) !important;"
-                    v-if="seccion.active"
+                    v-if="seccion.numero === curso.seccion_actual"
                   >
                     {{ seccion.numero }}
                   </a>
