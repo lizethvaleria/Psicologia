@@ -328,19 +328,19 @@ export default {
             validateMatricula(this.curso.usuario.matricula) &&
             this.curso.usuario.preparatoria))
       ) {
-        $(".preloader").fadeIn();
         this.curso.informacion_llenada = true;
-        this.Guardar_En_LocalStorage();
-        this.Guardar_En_Firebase("si");
+        this.setCurso(this.curso);
+        $(".preloader").fadeIn();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else {
         alert(
           "Todos las preguntas son obligatorias.\nAsegúrese de ingresar un email y matrícula válidos."
         );
       }
     },
-    ...mapActions([
-      "setCurso"
-    ])
+    ...mapActions(["setCurso"])
   }
 };
 </script>
