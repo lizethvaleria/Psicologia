@@ -176,12 +176,19 @@ export default {
       return true;
     },
     Regresar() {
-      var siguiente_tema = this.seccion_actual.numero_tema;
-      var siguiente_seccion = this.seccion_actual.numero_seccion - 1;
-      this.seccion_actual.componente = siguiente_tema + "_" + siguiente_seccion;
-      this.seccion_actual.numero_tema = siguiente_tema;
-      this.seccion_actual.numero_seccion = siguiente_seccion;
-      this.Colocar_Seccion_Actual();
+      const temaActual = this.curso.temas[this.curso.tema_actual - 1];
+      const seccionActual = temaActual.secciones[this.curso.seccion_actual - 1];
+
+      if (seccionActual.numero > 1) {
+        this.curso.seccion_actual -= 1;
+      } else if (temaActual > 1) {
+        this.curso.seccion_actual = this.curso.temas[
+          temaActual.numero_tema - 1
+        ].secciones.length;
+        this.curso.tema_actual -= 1;
+      }
+      this.setCurso(this.curso);
+      this.Colocar_Seccion();
     },
     Colocar_Seccion() {
       this.curso = this.$store.getters.getCurso;
