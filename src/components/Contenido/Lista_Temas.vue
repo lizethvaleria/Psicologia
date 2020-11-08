@@ -4,7 +4,7 @@
     <ul class="list-group list-group-fit" id="ul_temas">
       <li
         class="list-group-item tema_li"
-        :class="{ active: tema.active }"
+        :class="{ active: IsTemaCompletado(tema.numero) }"
         :key="tema.numero"
         v-for="tema of curso.temas"
       >
@@ -34,39 +34,24 @@ export default {
     };
   },
   methods: {
-    Ir_A_Tema(tema) {
-      const temaTerminado = numeroTema => {
+    IsTemaCompletado(numeroTema) {
+      const temaContestado = numeroTema => {
         const tema = this.curso.temas[numeroTema - 1];
-
         const seccionesSinContestar = tema.secciones.filter(seccion =>
           seccion.preguntas
             ? seccion.preguntas.filter(pregunta => pregunta.respuesta)
                 .length === 0
             : false
         );
-
         return seccionesSinContestar.length === 0;
       };
 
-      const primeraSeccionContestada = numeroTema => {
-        const primerSeccion = this.curso.temas[numeroTema - 1].secciones[0];
-        if (!primerSeccion.preguntas) {
-          return true;
-        }
-        const preguntasContestadasPrimerSeccion = primerSeccion.preguntas.filter(
-          pregunta => pregunta.respuesta
-        );
-        return (
-          preguntasContestadasPrimerSeccion.length ===
-          primerSeccion.preguntas.length
-        );
-      };
-
-      if (
-        tema.numero === 1 ||
-        (primeraSeccionContestada(tema.numero) &&
-          temaTerminado(tema.numero - 1))
-      ) {
+      return numeroTema === 1
+        ? temaContestado(numeroTema)
+        : temaContestado(numeroTema) && temaContestado(numeroTema - 1);
+    },
+    Ir_A_Tema(tema) {
+      if (tema.numero == 1 || this.IsTemaCompletado(tema.numero - 1)) {
         this.curso.tema_actual = tema.numero;
         this.curso.seccion_actual = 1;
         this.curso.finalizado = false;
