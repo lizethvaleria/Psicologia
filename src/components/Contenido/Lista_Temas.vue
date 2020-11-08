@@ -4,7 +4,7 @@
     <ul class="list-group list-group-fit" id="ul_temas">
       <li
         class="list-group-item tema_li"
-        :class="{ active: IsTemaCompletado(tema.numero) }"
+        :class="{ active: curso.tema_actual === tema.numero }"
         :key="tema.numero"
         v-for="tema of curso.temas"
       >
