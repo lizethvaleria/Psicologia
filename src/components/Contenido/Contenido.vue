@@ -33,7 +33,7 @@
                     v-on:click.prevent="Ir_A_Seccion(seccion)"
                     type="button"
                     class="btn btn-circle btn-primary"
-                    v-else-if="seccion.completado"
+                    v-else-if="SeccionCompleta(seccion)"
                   >
                     {{ seccion.numero }}
                   </a>
@@ -101,9 +101,7 @@
           >
             <div class="sidebar-p-y">
               <contadorview></contadorview>
-              <listatemasview
-                @CambiarTema="Colocar_Seccion"
-              ></listatemasview>
+              <listatemasview @CambiarTema="Colocar_Seccion"></listatemasview>
             </div>
           </div>
         </div>
@@ -167,9 +165,12 @@ export default {
     Validar(seccion) {
       if (seccion.preguntas) {
         console.log("validando respuestas");
-        const preguntasConRespuestaVacia = seccion.preguntas.filter(p => !p.respuesta);
+        const preguntasConRespuestaVacia = seccion.preguntas.filter(
+          p => !p.respuesta
+        );
         console.log("Preguntas sin respuesta: ", preguntasConRespuestaVacia);
-        const isValid = seccion.preguntas.filter(p => !p.respuesta).length === 0;
+        const isValid =
+          seccion.preguntas.filter(p => !p.respuesta).length === 0;
         return isValid;
       }
       return true;
@@ -189,10 +190,17 @@ export default {
       } else {
         const temaActual = this.curso.temas[this.curso.tema_actual - 1];
         this.tema_actual = temaActual;
-        const seccionActual = temaActual.secciones[this.curso.seccion_actual - 1];
+        const seccionActual =
+          temaActual.secciones[this.curso.seccion_actual - 1];
         this.componente = `${this.curso.tema_actual}_${this.curso.seccion_actual}`;
       }
       console.log("Colocando seccion: ", this.componente);
+    },
+    SeccionCompleta(seccion) {
+      return seccion.preguntas
+        ? seccion.preguntas.filter(pregunta => pregunta.respuesta).length ===
+            seccion.preguntas.length
+        : true;
     },
     ...mapActions(["setCurso", "avanzarSeccion"])
   },
