@@ -101,7 +101,10 @@
           >
             <div class="sidebar-p-y">
               <contadorview></contadorview>
-              <listatemasview @CambiarTema="Colocar_Seccion"></listatemasview>
+              <listatemasview
+                :curso="curso"
+                @CambiarTema="Colocar_Seccion"
+              ></listatemasview>
             </div>
           </div>
         </div>
