@@ -5,7 +5,29 @@
       v-if="!curso.informacion_llenada"
       class="row mt-5 pt-5 justify-content-center"
     >
-      <div v-if="!curso.reglas_aceptadas">
+      <div v-if="!curso.video_rector">
+        <div class="embed-container">
+          <iframe
+            src="https://www.youtube.com/embed/oXXTq3N5_pU"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="row justify-content-end mt-1 mr-2">
+          <h6 v-if="time !== 0">
+            Podrás saltar este video en {{ time }} segundos...
+          </h6>
+          <button
+            v-else
+            type="button"
+            class="btn btn-success"
+            @click="MarkVideoAsSeen"
+          >
+            Continuar
+          </button>
+        </div>
+      </div>
+      <div v-else-if="!curso.reglas_aceptadas">
         <div class="col-12 mt-3 text-center">
           <h3>Mensaje del Rector</h3>
         </div>
@@ -270,20 +292,28 @@ export default {
   },
   data() {
     return {
-      time: 60,
+      time: 30,
       timer: null,
       continuar: true,
       curso: this.$store.getters.getCurso
     };
   },
   mounted() {
-    this.Video_Visto();
-    console.log("Initial curso: ", this.curso);
+    if (!this.curso.video_rector) {
+      const that = this;
+      const interval = setInterval(() => {
+        that.time = that.time - 1;
+        if (that.time === 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
   },
   methods: {
-    Video_Visto() {
+    MarkVideoAsSeen() {
       this.curso.video_rector = true;
-      this.curso.reglas_aceptadas = false;
+      this.setCurso(this.curso);
+      this.actualizarEnFirestore();
     },
     Comenzar() {
       this.curso.reglas_aceptadas = true;
@@ -319,14 +349,27 @@ export default {
         );
       }
     },
-    ...mapActions(["setCurso"])
+    ...mapActions(["setCurso", "actualizarEnFirestore"])
   }
 };
 </script>
 
-<style>
-video {
+<style scoped>
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  min-width: 80vw;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 </style>
