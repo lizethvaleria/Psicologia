@@ -73,7 +73,7 @@ export default {
   methods: {
     Crear_PDF() {
       downloadPreguntasPDF(
-        "Ejercicio Mis Grietas Valen Oro",
+        "Mis Grietas Valen Oro",
         this.preguntas,
         "tema1_seccion1.pdf"
       );
