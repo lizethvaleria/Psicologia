@@ -28,47 +28,62 @@
         </div>
       </div>
       <div v-else-if="!curso.reglas_aceptadas">
-        <div class="col-12 mt-3 text-center">
+        <div class="row mt-5 pt-md-5 justify-content-center">
           <h3>Mensaje del Rector</h3>
         </div>
-        <div class="col-12 text-center center ">
-          <p>
-            Es un gusto saludarte en esta ocasión por este medio y a su vez
-            deseo reconocer tu gran esfuerzo y dedicación por llevar a cabo muy
-            puntualmente el programa DIME (Desarrollo Integral del Manejo
-            Emocional), el cual es una valiosa oportunidad para contribuir con
-            tu plan de vida y carrera. Eres nuestra razón de SER y es por ello
-            que creamos este programa para ti, ya que deseamos acompañarte en
-            esta etapa socio-afectiva, que resulta esencial para enfrentar y
-            resolver conflictos propios de tu edad y venideros en un futuro. El
-            <b><i>Seminario de Counseling Virtual DIME</i></b
-            >, es una plataforma de 6 horas (tu elijes tu ritmo) que te
-            permitirá el desarrollo de habilidades intra e interpersonales, por
-            mencionarte algunas: comunicación asertiva de sentimientos e ideas,
-            crear situaciones de calma, optimismo, comprender mejor a los otros
-            y a ti mismo, tomar decisiones más responsables, entre otras más.
-            Para ello comprenderás, aplicarás y descubrirás las competencias
-            centrales de la inteligencia emocional como lo son:
-            <b
-              ><i
-                >Autoconocimiento, Autocontrol, Automotivación, Empatía y
-                Habilidades Sociales.</i
-              ></b
-            >
-          </p>
-
-          <p>
-            Estoy convencido que en tu interior hay algo muy grande que vencerá
-            cualquier obstáculo, porque empezarás a creer aún más en ti y
-            desarrollarás aún más tu capacidad de resiliencia.
-          </p>
-          <strong
-            ><h4>
-              No te detengas, transfórmate y trasciende.
-            </h4></strong
-          >
-          <strong><h4>Ing. Rogelio G. Garza Rivera.</h4></strong>
-          <h5>Rector</h5>
+        <div class="row text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-10 col-md-12">
+                <p>
+                  Es un gusto saludarte en esta ocasión por este medio y a su
+                  vez deseo reconocer tu gran esfuerzo y dedicación por llevar a
+                  cabo muy puntualmente el programa DIME (Desarrollo Integral
+                  del Manejo Emocional), el cual es una valiosa oportunidad para
+                  contribuir con tu plan de vida y carrera. Eres nuestra razón
+                  de SER y es por ello que creamos este programa para ti, ya que
+                  deseamos acompañarte en esta etapa socio-afectiva, que resulta
+                  esencial para enfrentar y resolver conflictos propios de tu
+                  edad y venideros en un futuro. El
+                  <b><i>Seminario de Counseling Virtual DIME</i></b
+                  >, es una plataforma de 6 horas (tu elijes tu ritmo) que te
+                  permitirá el desarrollo de habilidades intra e
+                  interpersonales, por mencionarte algunas: comunicación
+                  asertiva de sentimientos e ideas, crear situaciones de calma,
+                  optimismo, comprender mejor a los otros y a ti mismo, tomar
+                  decisiones más responsables, entre otras más. Para ello
+                  comprenderás, aplicarás y descubrirás las competencias
+                  centrales de la inteligencia emocional como lo son:
+                  <b
+                    ><i
+                      >Autoconocimiento, Autocontrol, Automotivación, Empatía y
+                      Habilidades Sociales.</i
+                    ></b
+                  >
+                </p>
+                <p>
+                  Estoy convencido que en tu interior hay algo muy grande que
+                  vencerá cualquier obstáculo, porque empezarás a creer aún más
+                  en ti y desarrollarás aún más tu capacidad de resiliencia.
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <h4 class="m-2 p-2">
+                <strong>
+                  No te detengas, transfórmate y trasciende.
+                </strong>
+              </h4>
+            </div>
+            <div class="row justify-content-center">
+              <h4 class="m-2">
+                <strong>Ing. Rogelio G. Garza Rivera.</strong>
+              </h4>
+            </div>
+            <div class="row justify-content-center">
+              <h5>Rector</h5>
+            </div>
+          </div>
         </div>
 
         <div
