@@ -28,7 +28,7 @@
         </div>
       </div>
       <div v-else-if="!curso.reglas_aceptadas">
-        <div class="row mt-5 pt-md-5 justify-content-center">
+        <div class="row mt-5 justify-content-center">
           <h3>Mensaje del Rector</h3>
         </div>
         <div class="row text-center">
