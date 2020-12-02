@@ -40,11 +40,7 @@
       </div>
       <br />
       <div class="card-body">
-        <div
-          :key="pregunta.mensaje"
-          v-for="pregunta in preguntas"
-          class="row"
-        >
+        <div :key="pregunta.mensaje" v-for="pregunta in preguntas" class="row">
           <div class="col-12 form-group">
             <label for="exampleFormControlTextarea1">
               <b>{{ pregunta.mensaje }}</b>
@@ -57,18 +53,36 @@
             ></textarea>
           </div>
         </div>
+        <div class="row mt-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <button class="btn btn-success btn-block" v-on:click="Crear_PDF">
+              Descargar Mi Plan
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { downloadPreguntasPDF } from "@/services/jspdf";
+
 export default {
   name: "tema1seccion1",
+  methods: {
+    Crear_PDF() {
+      downloadPreguntasPDF(
+        "Ejercicio Mis Grietas Valen Oro",
+        this.preguntas,
+        "tema1_seccion1.pdf"
+      );
+    }
+  },
   data() {
     return {
       preguntas: this.$store.getters.getCurso.temas[0].secciones[0].preguntas
-    }
+    };
   }
 };
 </script>
