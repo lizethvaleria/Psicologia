@@ -6,27 +6,9 @@
           <div class="mdk-drawer-layout__content page ">
             <div class="container-fluid page__container px-lg-5 px-3 px-md-3">
               <div class="row mb-5 mt-3 px-lg-5 justify-content-center" >
-                <div class="col-lg-8 px-lg-5 text-center py-1 bg-warning text-dark">
-                  <b>Fuentes</b>
-                </div>
-                <div class="col-lg-8 px-lg-5 mt-4">
-                  <ul>
-                    <li class="mt-3">
-                      Ascary Aguillón (2015). Fundamentos del comportamiento humano en la organización. Ed Manual Moderno. 
-                    </li>
-                    <li class="mt-3">
-                      https://tn.com.ar/salud/lo-ultimo/diez-reglas-basicas-para-mantener-el-estres-bajo-control_857635
-                    </li>
-                    <li class="mt-3 d-none d-lg-block">
-                      https://medlineplus.gov/spanish/ency/article/001942.htm
-                    </li>
-                    <li class="mt-3 d-block d-lg-none">
-                      https://medlineplus.gov/spanish<br>/ency/article/001942.htm
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-8 px-lg-5 mt-5 text-center py-1 bg-warning text-dark">
-                  <b></b>
+              
+                
+                <div class="col-lg-8 px-lg-3 mt-1 text-center py-1 bg-warning text-dark">
                 </div>
                 <div class="col-lg-8 mt-5 text-center">
                   <h5><b>Rector:</b></h5>
@@ -59,8 +41,10 @@
                 </div>
                 <div class="col-lg-8 mt-3 text-center">
                   <h5><b>Desarrolladores:</b></h5>
-                  <h6>M.A. Sergio Ordoñez </h6>
-                  <h6>Secretaria de Información</h6>
+                  <h6>Secretaria de TI FIME </h6>
+                  
+                </div>
+                 <div class="col-lg-8 px-lg-3 mt-2 text-center py-1 bg-warning text-dark">
                 </div>
                
               </div>
