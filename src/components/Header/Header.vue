@@ -18,12 +18,7 @@
                         <div class="navbar-collapse collapse" id="navbarsExample03">
 
                             <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./../../">Cursos</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a href="./../../" class="nav-link">Instructores</a>
-                                </li>
+                                
                                 <li class="nav-item dropdown">
                                     <a href="" v-on:click.prevent="AcercaDe" class="nav-link">Acerca de</a>
                                 </li>
