@@ -7,7 +7,7 @@
         </div>
         <div class="media-body">
           <h4 class="card-title">
-            Iniciando con inspiración, me supero con resiliencia.
+            Iniciando con inspiración, me supero con resiliencia
           </h4>
         </div>
       </div>

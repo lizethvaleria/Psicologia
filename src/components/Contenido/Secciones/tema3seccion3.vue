@@ -4,7 +4,7 @@
       <div class="media align-items-center">
         <div class="media-body">
           <h4 class="card-title">
-            3. Automotivación.
+            3. Automotivación
           </h4>
         </div>
       </div>

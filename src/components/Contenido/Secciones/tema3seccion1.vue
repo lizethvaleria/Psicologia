@@ -3,11 +3,11 @@
     <div class="card-header">
       <div class="media align-items-center">
         <div class="media-left">
-          <h4 class="mb-0"><strong>1</strong></h4>
+        
         </div>
         <div class="media-body">
           <h4 class="card-title">
-            El sendero de mis emociones
+           1. El sendero de mis emociones
           </h4>
         </div>
       </div>

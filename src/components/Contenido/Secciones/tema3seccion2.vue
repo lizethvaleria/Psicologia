@@ -4,7 +4,7 @@
       <div class="media align-items-center">
         <div class="media-body">
           <h4 class="card-title">
-            2. Autocontrol.
+            2. Autocontrol
           </h4>
         </div>
       </div>
@@ -21,7 +21,7 @@
         </div>
         <br />
 
-        <div class="col-12 mt-3 text">
+        <div class="col-12 mt-3 text-center">
           <b>Ejercicio SPECC:</b> Situación – Pensamiento - Emoción- Conducta
           -Consecuencia.
         </div>
