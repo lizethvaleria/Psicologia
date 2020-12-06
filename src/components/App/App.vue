@@ -1,7 +1,10 @@
 <template>
-  <div class="mdk-header-layout js-mdk-header-layout">
-    <headerview></headerview>
-    <div
+ <div class="MensajeBienvenida d-flex flex-column justify-content-center align-items-center bg-white w-100 h-100">
+  
+    <bienvenidaview></bienvenidaview>
+    <div class="mdk-header-layout js-mdk-header-layout">
+      <headerview></headerview>
+       <div
       v-if="!curso.informacion_llenada"
       class="row mt-5 pt-5 justify-content-center"
     >
@@ -294,16 +297,20 @@
     </div>
     <contenidoview v-else></contenidoview>
   </div>
+ </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
 import HeaderView from "@/components/Header/Header.vue";
 import ContenidoView from "@/components/Contenido/Contenido.vue";
+import bienvenidaView from "@/components/bienvenida/bienvenida.vue";
 export default {
   components: {
     headerview: HeaderView,
-    contenidoview: ContenidoView
+    contenidoview: ContenidoView,
+    bienvenidaview: bienvenidaView,
+
   },
   data() {
     return {
