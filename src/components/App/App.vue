@@ -1,4 +1,5 @@
 <template>
+
   <div class="mdk-header-layout js-mdk-header-layout">
     <headerview></headerview>
     <div
@@ -300,10 +301,12 @@
 import { mapActions } from "vuex";
 import HeaderView from "@/components/Header/Header.vue";
 import ContenidoView from "@/components/Contenido/Contenido.vue";
+import Bienvenida from '../bienvenida/bienvenida.vue';
 export default {
   components: {
     headerview: HeaderView,
-    contenidoview: ContenidoView
+    contenidoview: ContenidoView,
+    bienvenidaview:Bienvenidaview
   },
   data() {
     return {
