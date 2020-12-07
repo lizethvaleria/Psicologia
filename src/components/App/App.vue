@@ -1,5 +1,4 @@
 <template>
-
   <div class="mdk-header-layout js-mdk-header-layout">
     <headerview></headerview>
     <div
@@ -71,9 +70,7 @@
             </div>
             <div class="row justify-content-center">
               <h4 class="m-2 p-2">
-                <strong>
-                  No te detengas, transfórmate y trasciende.
-                </strong>
+                <strong> No te detengas, transfórmate y trasciende. </strong>
               </h4>
             </div>
             <div class="row justify-content-center">
@@ -184,69 +181,69 @@
                           <option value="Preparatoria7">Preparatoria 7</option>
                           <option value="Preparatoria8">Preparatoria 8</option>
                           <option value="Preparatoria9">Preparatoria 9</option>
-                          <option value="Preparatoria10"
-                            >Preparatoria 10</option
-                          >
-                          <option value="Preparatoria11"
-                            >Preparatoria 11</option
-                          >
-                          <option value="Preparatoria12"
-                            >Preparatoria 12</option
-                          >
-                          <option value="Preparatoria13"
-                            >Preparatoria 13</option
-                          >
-                          <option value="Preparatoria14"
-                            >Preparatoria 14</option
-                          >
-                          <option value="Preparatoria15"
-                            >Preparatoria 15</option
-                          >
-                          <option value="Preparatoria16"
-                            >Preparatoria 16</option
-                          >
-                          <option value="Preparatoria17"
-                            >Preparatoria 17</option
-                          >
-                          <option value="Preparatoria18"
-                            >Preparatoria 18</option
-                          >
-                          <option value="Preparatoria19"
-                            >Preparatoria 19</option
-                          >
-                          <option value="Preparatoria20"
-                            >Preparatoria 20</option
-                          >
-                          <option value="Preparatoria21"
-                            >Preparatoria 21</option
-                          >
-                          <option value="Preparatoria22"
-                            >Preparatoria 22</option
-                          >
-                          <option value="Preparatoria23"
-                            >Preparatoria 23</option
-                          >
-                          <option value="Preparatoria24"
-                            >Preparatoria 24</option
-                          >
-                          <option value="Preparatoria25"
-                            >Preparatoria 25</option
-                          >
-                          <option value="AlvaroObregon"
-                            >Escuela Industrial y Preparatoria Técnica "Álvaro
-                            Obregón"</option
-                          >
-                          <option value="CIDEB"
-                            >Centro de Investigación y Desarrollo en Educación
-                            Bilingüe CIDEB</option
-                          >
-                          <option value="PabloLivas"
-                            >Escuela Industrial y Preparatoria Técnica "Pablo
-                            Livas"</option
-                          >
-                          <option value="TecnicaMedica"
-                            >Escuela y Preparatoria Técnica Médica</option
-                          >
+                          <option value="Preparatoria10">
+                            Preparatoria 10
+                          </option>
+                          <option value="Preparatoria11">
+                            Preparatoria 11
+                          </option>
+                          <option value="Preparatoria12">
+                            Preparatoria 12
+                          </option>
+                          <option value="Preparatoria13">
+                            Preparatoria 13
+                          </option>
+                          <option value="Preparatoria14">
+                            Preparatoria 14
+                          </option>
+                          <option value="Preparatoria15">
+                            Preparatoria 15
+                          </option>
+                          <option value="Preparatoria16">
+                            Preparatoria 16
+                          </option>
+                          <option value="Preparatoria17">
+                            Preparatoria 17
+                          </option>
+                          <option value="Preparatoria18">
+                            Preparatoria 18
+                          </option>
+                          <option value="Preparatoria19">
+                            Preparatoria 19
+                          </option>
+                          <option value="Preparatoria20">
+                            Preparatoria 20
+                          </option>
+                          <option value="Preparatoria21">
+                            Preparatoria 21
+                          </option>
+                          <option value="Preparatoria22">
+                            Preparatoria 22
+                          </option>
+                          <option value="Preparatoria23">
+                            Preparatoria 23
+                          </option>
+                          <option value="Preparatoria24">
+                            Preparatoria 24
+                          </option>
+                          <option value="Preparatoria25">
+                            Preparatoria 25
+                          </option>
+                          <option value="AlvaroObregon">
+                            Escuela Industrial y Preparatoria Técnica "Álvaro
+                            Obregón"
+                          </option>
+                          <option value="CIDEB">
+                            Centro de Investigación y Desarrollo en Educación
+                            Bilingüe CIDEB
+                          </option>
+                          <option value="PabloLivas">
+                            Escuela Industrial y Preparatoria Técnica "Pablo
+                            Livas"
+                          </option>
+                          <option value="TecnicaMedica">
+                            Escuela y Preparatoria Técnica Médica
+                          </option>
                         </select>
                       </div>
                     </div>
@@ -301,19 +298,17 @@
 import { mapActions } from "vuex";
 import HeaderView from "@/components/Header/Header.vue";
 import ContenidoView from "@/components/Contenido/Contenido.vue";
-import Bienvenida from '../bienvenida/bienvenida.vue';
 export default {
   components: {
     headerview: HeaderView,
     contenidoview: ContenidoView,
-    bienvenidaview:Bienvenidaview
   },
   data() {
     return {
       time: 30,
       timer: null,
       continuar: true,
-      curso: this.$store.getters.getCurso
+      curso: this.$store.getters.getCurso,
     };
   },
   mounted() {
@@ -338,12 +333,12 @@ export default {
       this.setCurso(this.curso);
     },
     Continuar() {
-      const validateEmail = email => {
+      const validateEmail = (email) => {
         const expression = /\S+@\S+\.\S+/;
         return expression.test(email.toLowerCase());
       };
 
-      const validateMatricula = matricula => {
+      const validateMatricula = (matricula) => {
         const expression = /^\d+$/;
         return expression.test(matricula) && matricula.length === 7;
       };
@@ -367,8 +362,8 @@ export default {
         );
       }
     },
-    ...mapActions(["setCurso", "actualizarEnFirestore"])
-  }
+    ...mapActions(["setCurso", "actualizarEnFirestore"]),
+  },
 };
 </script>
 
